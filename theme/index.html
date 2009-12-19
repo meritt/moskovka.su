@@ -30,8 +30,8 @@
       <div class="main">
         {block:SearchPage}
         <div class="searchpage">
-          <span class="archivepagetitle">Searched for <em>{SearchQuery}</em></span>
-          <span class="resultscount">{SearchResultCount} result(s)</span>
+          <span class="archivepagetitle">Вы искали: &laquo;<em>{SearchQuery}</em>&raquo;</span>
+          <span class="resultscount">Результат(ов): {SearchResultCount}</span>
         </div>
         {/block:SearchPage}
 
@@ -82,7 +82,7 @@
 
           <div class="datetime">
             {block:RebloggedFrom}
-            <p>Reblogged from <a href="{ReblogParentURL}">{ReblogRootName}</a></p>
+            <p>Перепечатано от <a href="{ReblogParentURL}">{ReblogRootName}</a></p>
             {/block:RebloggedFrom}
 
             <p><a href="{Permalink}" class="permalink"><span class="date">{DayOfMonth} {Month}</span></a></p>
@@ -94,7 +94,7 @@
             {/block:PermalinkPage}
           </div>
 
-           <a href="{Permalink}" class="IDCommentsReplace">Comments</a></div>
+           <a href="{Permalink}" class="IDCommentsReplace">Комментировать</a></div>
           {/block:Posts}
 
           {block:PermalinkPage}
@@ -112,21 +112,21 @@
             {block:Pagination}
 
             {block:NextPage}
-            <div class="navleft">&larr;&nbsp;<a href="{NextPage}">Older</a></div>
+            <div class="navleft">&larr;&nbsp;<a href="{NextPage}">Назад</a></div>
             {/block:NextPage}
             {block:PreviousPage}
-            <div class="navright"><a href="{PreviousPage}">Newer</a>&nbsp;&rarr;</div>
+            <div class="navright"><a href="{PreviousPage}">Вперед</a>&nbsp;&rarr;</div>
             {/block:PreviousPage}
 
-            <div class="navcenter"><span class="pagenumber">Page {CurrentPage}</span></div>
+            <div class="navcenter"><span class="pagenumber">Страница {CurrentPage}</span></div>
             {/block:Pagination}
 
             {block:PermalinkPagination}
             {block:NextPost}
-            <div class="navleft">&larr;&nbsp;<a href="{NextPost}">Next post</a></div>
+            <div class="navleft">&larr;&nbsp;<a href="{NextPost}">Вперед</a></div>
             {/block:NextPost}
             {block:PreviousPost}
-            <div class="navright"><a href="{PreviousPost}">Previous post</a>&nbsp;&rarr;</div>
+            <div class="navright"><a href="{PreviousPost}">Назад</a>&nbsp;&rarr;</div>
             {/block:PreviousPost}
             {/block:PermalinkPagination}
           </div>
@@ -153,7 +153,7 @@
           <li><a href="http://www.facebook.com/efimova" class="facebook">Facebook</a></li>
         </ul>
 
-        <p class="credits">by {Title}</p>
+        <p class="credits">&copy; {Title}</p>
       </div>
     </div>
 
