@@ -448,7 +448,7 @@ p.credits {
 
 #footer {
   border-top: 1px solid #fff;
-  padding: 50px 0;
+  padding: 40px 0;
 }
 
 .navleft {
@@ -502,15 +502,11 @@ ul#dsq-comments li {
 /* NOTES */
 
 ol.notes {
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #fff;
-  margin: 20px 0 20px;
+  margin: 10px 0;
 }
 
 ol.notes li {
-  padding: 10px 0;
-  border-bottom: 1px solid #ccc;
-  border-top: 1px solid #fff;
+  padding: 5px 0;
 }
 
 ol.notes li blockquote {
@@ -548,4 +544,42 @@ input.searchbutton {
 
 .regular_post_body img {
   max-width: 100%;
+}
+
+.block {
+  margin: 0;
+  padding: 0;
+}
+
+.block h3 {
+  margin: 15px 0 0;
+}
+
+a.comment-link,
+a.comment-link:link,
+a.comment-link:visited {
+  display: block;
+  width: 11em;
+  margin-top: -20px;
+}
+
+div#IDCommentsNoCommentsDiv {
+  display: none !important;
+}
+
+div#IDCommentsNewThreadCover h3 {
+  font-size: 1.2em;
+}
+
+div#idc-user_admin a,
+div#idc-user_admin a:link,
+div#idc-user_admin a:visited,
+div.idc-right a,
+div.idc-right a:link,
+div.idc-right a:visited,
+ul.idc-user_i,
+ul.idc-user_i a,
+ul.idc-user_i a:link,
+ul.idc-user_i a:visited {
+  font-size: 0.85em !important;
 }
