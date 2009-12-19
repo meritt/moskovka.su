@@ -428,6 +428,14 @@ a.friendfeed {
   background: #e9e4d9 url('http://3.media.tumblr.com/2HhYIBYFOnoet8t8717mbxvNo1_100.png') no-repeat 10px center;
 }
 
+a.vkontakte {
+  background: #e9e4d9 url('http://static.alena.simonenko.su/i/vkontakte.png') no-repeat 10px center;
+}
+
+a.facebook {
+  background: #e9e4d9 url('http://static.alena.simonenko.su/i/facebook.png') no-repeat 10px center;
+}
+
 /* SIDEBAR - Credits */
 
 p.credits {
