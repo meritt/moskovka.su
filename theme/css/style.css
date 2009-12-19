@@ -295,8 +295,6 @@ input.searchbox {
   padding: 5px;
   border: 1px solid #ccc;
   font-family: Helvetica, Arial, sans-serif;
-  float: left;
-  display: inline;
   width: 160px;
   -webkit-border-radius: 3px;
   -khtml-border-radius: 3px;
@@ -305,15 +303,13 @@ input.searchbox {
 }
 
 input.searchbutton {
-  padding: 4px;
+  padding: 2px;
   border: 1px solid #ccc;
   text-transform: uppercase;
   font-family: Helvetica, Arial, sans-serif;
   font-weight: bold;
   color: #333;
-  float: right;
-  display: inline;
-  margin: -14px 0 0 0;
+  margin: 0;
   background-color: #e9e4d9;
   -webkit-border-radius: 3px;
   -khtml-border-radius: 3px;
@@ -321,30 +317,10 @@ input.searchbutton {
   border-radius: 3px;
 }
 
-/* Safari hack (Sorry) */
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  input.searchbutton {
-    padding: 4px;
-    border: 1px solid #ccc;
-    text-transform: uppercase;
-    font-family: Helvetica, Arial, sans-serif;
-    font-weight: bold;
-    color: #333;
-    float: right;
-    display: inline;
-    margin: 3px 0 0 0;
-    background-color: #e9e4d9;
-    -webkit-border-radius: 3px;
-    -khtml-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-  }
-}
-
 /* SIDEBAR - Main menu */
 
 ul.menu {
-  margin: 40px 0 1em;
+  margin: 30px 0 1em;
 }
 
 ul.menu li {
