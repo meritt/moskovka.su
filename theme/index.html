@@ -584,31 +584,31 @@ input.searchbutton {
         <div class="post">
           <div class="item">
             {block:Regular}
-            {block:Title}<h2>{Title}</h2><!--Intense Debate--> <span style="display:none" id="ID{Permalink}">{Title}</span> <!--/Intense Debate-->{/block:Title}
+            {block:Title}<h2>{Title}</h2> <span style="display:none" id="ID{Permalink}">{Title}</span>{/block:Title}
             <p style="regular_post_body">{Body}</p>
             {/block:Regular}
 
-            {block:Photo}<!--Intense Debate--> <span style="display:none" id="ID{Permalink}">Tumblr Photo</span> <!--/Intense Debate-->
+            {block:Photo} <span style="display:none" id="ID{Permalink}">Tumblr Photo</span>
             <span class="photo">{LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" title="{PhotoAlt}" width="486" />{LinkCloseTag}</span>
             <p>{Caption}</p>
             {/block:Photo}
 
-            {block:Quote}<!--Intense Debate--> <span style="display:none" id="ID{Permalink}">Tumblr Quote</span> <!--/Intense Debate-->
+            {block:Quote} <span style="display:none" id="ID{Permalink}">Tumblr Quote</span>
             <blockquote class="quoteblock"><span class="{Length}_quote">{Quote}</span></blockquote>
             {block:Source}<p>&mdash;&nbsp;{Source}</p>{/block:Source}
             {/block:Quote}
 
-            {block:Video}<!--Intense Debate--> <span style="display:none" id="ID{Permalink}">Tumblr Video</span> <!--/Intense Debate-->
+            {block:Video} <span style="display:none" id="ID{Permalink}">Tumblr Video</span>
             <div class="video">{Video-500}</div>
             {Caption}
             {/block:Video}
 
-            {block:Audio}<!--Intense Debate--> <span style="display:none" id="ID{Permalink}">Tumblr Audio</span> <!--/Intense Debate-->
+            {block:Audio} <span style="display:none" id="ID{Permalink}">Tumblr Audio</span>
             {AudioPlayerGrey}
             {Caption}
             {/block:Audio}
 
-            {block:Link}<!--Intense Debate--> <span style="display:none" id="ID{Permalink}">Tumblr Link</span> <!--/Intense Debate-->
+            {block:Link} <span style="display:none" id="ID{Permalink}">Tumblr Link</span>
             <h2><a href="{URL}" {Target}>{Name}</a>&nbsp;&rarr;</h2>
             {block:Description}
             <p>{Description}</p>
@@ -618,7 +618,7 @@ input.searchbutton {
             {block:Conversation}
             {block:Title}
             <h2>{Title}</h2>
-            <!--Intense Debate--> <span style="display:none" id="ID{Permalink}">{Title}</span> <!--/Intense Debate-->{/block:Title}
+             <span style="display:none" id="ID{Permalink}">{Title}</span>{/block:Title}
             {block:Lines}
             <p>{block:Label}<strong>{Label}</strong>{/block:Label} {Line}</p>
             {/block:Lines}
@@ -639,7 +639,7 @@ input.searchbutton {
             {/block:PermalinkPage}
           </div>
 
-          <!--Intense Debate--> <a href="{Permalink}" class="IDCommentsReplace">Comments</a> <!--/Intense Debate--></div>
+           <a href="{Permalink}" class="IDCommentsReplace">Comments</a></div>
           {/block:Posts}
 
           {block:PermalinkPage}
@@ -705,7 +705,7 @@ input.searchbutton {
     <script type="text/javascript">var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script>
     <script type="text/javascript">try {var pageTracker = _gat._getTracker("UA-298210-6");pageTracker._trackPageview();} catch(err) {}</script>
 
-    <!--Intense Debate--> <script src="http://www.intensedebate.com/js/tumblrWrapper.php?acct=6a8a6dd2f76e76f7585adf019424ce67" type="text/javascript"></script>  <!--/Intense Debate-->
+     <script src="http://www.intensedebate.com/js/tumblrWrapper.php?acct=6a8a6dd2f76e76f7585adf019424ce67" type="text/javascript"></script>
 
   </body>
 </html>
