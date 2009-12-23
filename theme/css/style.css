@@ -43,12 +43,11 @@ caption, th, td {
   font-weight: normal;
 }
 
-blockquote:before, blockquote:after,
 q:before, q:after {
   content: "";
 }
 
-blockquote, q {
+q {
   quotes: "" "";
 }
 
@@ -272,9 +271,19 @@ pre, code {
 }
 
 blockquote {
-  margin-left: 50px;
-  font-style: italic;
+  margin: 0.5em 40px 1em;
+  line-height: 1.4em;
 }
+
+blockquote:before {
+  float: left;
+  margin-left: -35px;
+  font-family: "Arial";
+  content: '«';
+  font-size: 44px;
+  line-height: 0.6em;
+}
+
 
 blockquote.quoteblock {
   margin-left: 0;
