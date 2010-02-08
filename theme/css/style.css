@@ -108,6 +108,7 @@ a:hover {
 #header {
   margin: 60px 0 0 0;
   width: 500px;
+  height: 64px;
   border-bottom: 1px solid #ccc;
   padding-bottom: 50px;
 }
@@ -137,6 +138,7 @@ p.description {
 #main {
   width: 500px;
   float: left;
+  clear: left;
 }
 
 .post {
@@ -532,6 +534,11 @@ input.searchbutton {
 
 .block h3 {
   margin: 15px 0 0;
+}
+
+.photo {
+  float:left;
+  margin-right: 10px;
 }
 
 a.comment-link,
