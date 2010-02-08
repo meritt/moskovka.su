@@ -186,6 +186,15 @@ h2 {
   font-size: 1.5em;
 }
 
+h2.nostyle a,
+h2.nostyle a:hover {
+  color: rgb(51, 51, 51);
+  background: none;
+  text-decoration: none;
+  font-weight: bold;
+  -webkit-transition: none;
+}
+
 h3 {
   text-transform: uppercase;
   font-weight: bold;
