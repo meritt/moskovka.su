@@ -41,31 +41,31 @@
         <div class="post">
           <div class="item">
             {block:Regular}
-            {block:Title}<h2>{Title}</h2> <span style="display:none" id="ID{Permalink}">{Title}</span>{/block:Title}
+            {block:Title}<h2>{Title}</h2><noindex> <span style="display:none" id="ID{Permalink}">{Title}</span></noindex>{/block:Title}
             <p style="regular_post_body">{Body}</p>
             {/block:Regular}
 
-            {block:Photo} <span style="display:none" id="ID{Permalink}">Tumblr Photo</span>
+            {block:Photo}<noindex> <span style="display:none" id="ID{Permalink}">Tumblr Photo</span></noindex>
             <span class="photo">{LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" title="{PhotoAlt}" width="486" />{LinkCloseTag}</span>
             <p>{Caption}</p>
             {/block:Photo}
 
-            {block:Quote} <span style="display:none" id="ID{Permalink}">Tumblr Quote</span>
+            {block:Quote}<noindex> <span style="display:none" id="ID{Permalink}">Tumblr Quote</span></noindex>
             <blockquote class="quoteblock"><span class="{Length}_quote">{Quote}</span></blockquote>
             {block:Source}<p>&mdash;&nbsp;{Source}</p>{/block:Source}
             {/block:Quote}
 
-            {block:Video} <span style="display:none" id="ID{Permalink}">Tumblr Video</span>
+            {block:Video}<noindex> <span style="display:none" id="ID{Permalink}">Tumblr Video</span></noindex>
             <div class="video">{Video-500}</div>
             {Caption}
             {/block:Video}
 
-            {block:Audio} <span style="display:none" id="ID{Permalink}">Tumblr Audio</span>
+            {block:Audio}<noindex> <span style="display:none" id="ID{Permalink}">Tumblr Audio</span></noindex>
             {AudioPlayerGrey}
             {Caption}
             {/block:Audio}
 
-            {block:Link} <span style="display:none" id="ID{Permalink}">Tumblr Link</span>
+            {block:Link}<noindex> <span style="display:none" id="ID{Permalink}">Tumblr Link</span></noindex>
             <h2><a href="{URL}" {Target}>{Name}</a>&nbsp;&rarr;</h2>
             {block:Description}
             <p>{Description}</p>
@@ -73,9 +73,7 @@
             {/block:Link}
 
             {block:Conversation}
-            {block:Title}
-            <h2>{Title}</h2>
-             <span style="display:none" id="ID{Permalink}">{Title}</span>{/block:Title}
+            {block:Title}<h2>{Title}</h2><noindex> <span style="display:none" id="ID{Permalink}">{Title}</span></noindex>{/block:Title}
             {block:Lines}
             <p>{block:Label}<strong>{Label}</strong>{/block:Label} {Line}</p>
             {/block:Lines}
@@ -100,12 +98,9 @@
           {/block:Posts}
 
           {block:PermalinkPage}
-          {block:PostNotes}
-          <div class="block">
-            <h3>Заметки</h3>
-            {PostNotes}
-          </div>
-          {/block:PostNotes}
+            {block:PostNotes}
+              <noindex><div class="block"><h3>Заметки</h3>{PostNotes}</div></noindex>
+            {/block:PostNotes}
           {/block:PermalinkPage}
 
           <div id="footer">
@@ -140,7 +135,7 @@
 
         <ul class="menu">
           <li><a href="/">Последние записи</a></li>
-          <li><a href="/random/">Случайное сообщение</a></li>
+          <li><a href="/mobile/">Мобильная версия</a></li>
           <li><a href="/archive/">Архив</a></li>
           <li><a href="http://feeds.feedburner.com/simonenko/alena">RSS</a></li>
         </ul>
