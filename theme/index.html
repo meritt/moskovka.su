@@ -105,24 +105,15 @@
 
           <div id="footer">
             {block:Pagination}
+              {block:NextPage}<div class="navleft"><a href="{NextPage}">&larr;&nbsp;Назад</a></div>{/block:NextPage}
+              {block:PreviousPage}<div class="navright"><a href="{PreviousPage}">Вперед&nbsp;&rarr;</a></div>{/block:PreviousPage}
 
-            {block:NextPage}
-            <div class="navleft">&larr;&nbsp;<a href="{NextPage}">Назад</a></div>
-            {/block:NextPage}
-            {block:PreviousPage}
-            <div class="navright"><a href="{PreviousPage}">Вперед</a>&nbsp;&rarr;</div>
-            {/block:PreviousPage}
-
-            <div class="navcenter"><span class="pagenumber">Страница {CurrentPage}</span></div>
+              <div class="navcenter"><span class="pagenumber">Страница {CurrentPage}</span></div>
             {/block:Pagination}
 
             {block:PermalinkPagination}
-            {block:NextPost}
-            <div class="navleft">&larr;&nbsp;<a href="{NextPost}">Вперед</a></div>
-            {/block:NextPost}
-            {block:PreviousPost}
-            <div class="navright"><a href="{PreviousPost}">Назад</a>&nbsp;&rarr;</div>
-            {/block:PreviousPost}
+              {block:NextPost}<div class="navleft"><a href="{NextPost}">&larr;&nbsp;Следующая запись</a></div>{/block:NextPost}
+              {block:PreviousPost}<div class="navright"><a href="{PreviousPost}">Предыдущая запись&nbsp;&rarr;</a></div>{/block:PreviousPost}
             {/block:PermalinkPagination}
           </div>
         </div>
