@@ -256,7 +256,7 @@ h4 {
   font-size: 42px;
   line-height: 1.1em;
   color: #666;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 .medium_quote {
@@ -265,7 +265,7 @@ h4 {
   font-size: 36px;
   line-height: 1.2em;
   color: #666;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 .long_quote {
@@ -274,7 +274,7 @@ h4 {
   font-size: 24px;
   line-height: 1.3em;
   color: #666;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 pre, code {
