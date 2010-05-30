@@ -149,6 +149,11 @@ p.description {
   padding-bottom: 40px;
 }
 
+.post h2 {
+  font-weight: normal;
+  color: #000;
+}
+
 /* MAIN BODY - Metadata */
 
 .datetime {
