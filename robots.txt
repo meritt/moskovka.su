@@ -1,3 +1,3 @@
 User-Agent: Yandex
 Disallow:
-Host: alena.simonenko.su
+Host: moskovka.su

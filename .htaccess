@@ -1,6 +1,6 @@
-ErrorDocument 404 http://alena.simonenko.su
-ErrorDocument 403 http://alena.simonenko.su
-ErrorDocument 500 http://alena.simonenko.su
+ErrorDocument 404 http://moskovka.su
+ErrorDocument 403 http://moskovka.su
+ErrorDocument 500 http://moskovka.su
 
 Options -Indexes
 
@@ -9,4 +9,4 @@ RewriteCond %{REQUEST_FILENAME} -s [OR]
 RewriteCond %{REQUEST_FILENAME} -l [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^.*$ - [NC,L]
-RewriteRule (.*) http://alena.simonenko.su/$1 [R=301,L]
+RewriteRule (.*) http://moskovka.su/$1 [R=301,L]
