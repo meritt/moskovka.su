@@ -587,3 +587,7 @@ ul.idc-user_i a:link,
 ul.idc-user_i a:visited {
   font-size: 0.85em !important;
 }
+
+.small {
+  font-size: 0.8em !important;
+}
