@@ -61,11 +61,13 @@
           {block:Title}
             <header>
               <h2><a href="{Permalink}">{Title}</a></h2>
+              {block:Date}
               <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24Hour}:{Minutes}:{Seconds}"><a href="{Permalink}" class="permalink">{block:NewDayDate}{Month} {DayOfMonth}, {Year} at {/block:NewDayDate}{12Hour}:{Minutes}{AmPm}</a></time>
+              {/block:Date}
               {block:PermalinkPage}{block:HasTags}<span class="tags">{block:Tags}<a href="{TagURL}">{Tag}</a> {/block:Tags}</span>{/block:HasTags}{/block:PermalinkPage}
             </header>
           {/block:Title}
-          <section>{Body}</section>
+          <section class="regular">{Body}</section>
         {/block:Regular}
 
         {block:Photo}
@@ -104,7 +106,7 @@
             <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24Hour}:{Minutes}:{Seconds}"><a href="{Permalink}" class="permalink">{block:NewDayDate}{Month} {DayOfMonth}, {Year} at {/block:NewDayDate}{12Hour}:{Minutes}{AmPm}</a></time>
           </header>
           {block:Description}
-          <section>{Description}</section>
+          <section class="link">{Description}</section>
           {/block:Description}
         {/block:Link}
 
@@ -123,10 +125,12 @@
         {/block:Chat}
 
         <footer{block:PermalinkPage} class="permalink"{/block:PermalinkPage}>
+          {block:NoteCount}
           <script>document.write(VK.Share.button({url:"{Permalink}"},{type:"round",text:"Мне нравится"}));</script>
           <div class="g-plusone" data-size="small" data-href="{Permalink}"></div>
           <iframe src="http://www.facebook.com/plugins/like.php?href={Permalink}&amp;layout=button_count&amp;show_faces=false&amp;width=100&amp;action=like&amp;font=trebuchet+ms&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none;overflow:hidden;width:100px;height:21px;" allowTransparency="true"></iframe>
           <a href="http://twitter.com/share" class="twitter-share-button" data-url="{Permalink}"{block:Title} data-text="{Title}"{/block:Title} data-count="horizontal" data-via="moskovka">Tweet</a>
+          {/block:NoteCount}
 
           {block:IndexPage}
           <p class="read_more_container">
@@ -143,6 +147,7 @@
         </footer>
 
         {block:PermalinkPage}
+        {block:NoteCount}
         <aside>
           <div id="fb-root"></div>
           <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
@@ -150,6 +155,7 @@
 
           {block:PostNotes}<div class="notes"><h3>Заметки</h3><noindex>{PostNotes}</noindex></div>{/block:PostNotes}
         </aside>
+        {/block:NoteCount}
         {/block:PermalinkPage}
       </article>
       {/block:Posts}
@@ -187,6 +193,9 @@
       </form>
 
       <ul>
+        {block:HasPages}
+          {block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}
+        {/block:HasPages}
         <li><a href="/">Последние записи</a></li>
         <li><a href="/mobile/">Мобильная версия</a></li>
         <li><a href="/archive/">Архив</a></li>
