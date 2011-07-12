@@ -1,0 +1,35 @@
+.hidden {
+  display: none;
+}
+
+.awesome-link () {
+  a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 2px solid rgb(156, 193, 217);
+    .highlight(border);
+
+    &:hover {
+      border-bottom-color: #000;
+    }
+  }
+}
+
+.awesome-button () {
+  border: 1px solid #666666;
+  .border-radius(4px);
+  .box-shadow(2px, #cccccc);
+  .top-gradient(#333333, #999999, #333333);
+  padding: 4px 8px;
+  color: #ffffff;
+
+  &:hover {
+    .box-shadow(2px, #999999);
+    .top-gradient(#444444, #aaaaaa, #444444);
+    .line-text-shadow(#333333);
+  }
+
+  &:active {
+    .top-gradient(#111111, #666666, #111111);
+  }
+}

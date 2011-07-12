@@ -1,0 +1,201 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>{block:PostTitle}{PostTitle} &mdash; {/block:PostTitle}{block:SearchPage}Поиск по &quot;{SearchQuery}&quot; &mdash; {/block:SearchPage}{block:TagPage}Поиск по метке &quot;{Tag}&quot; &mdash; {/block:TagPage}Алён@ Алёшкина{block:IndexPage} &mdash; специалист по интернет-маркетингу{/block:IndexPage}</title>
+  <meta name="description" content='{block:IndexPage}Алён@ Алёшкина — специалист по интернет-маркетингу{/block:IndexPage}{block:PostTitle}Алёна о "{PostTitle}"{/block:PostTitle}'>
+  <meta name="keywords" content="alena, efimova, moskovka, алена, алёна, московка, сео, продвижение, seo, search engine, smm, style, stylish">
+  <meta name="author" content="Alena *moskovka* Efimova">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="fb:admins" content="simonenko,efimova">
+
+  <link rel="shortcut icon" href="http://static.moskovka.su/favicon.ico">
+  <link rel="icon" href="{Favicon}">
+  <link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/simonenko/alena">
+
+  <link href="http://fonts.googleapis.com/css?family=Forum&amp;subset=cyrillic,latin&amp;v1" rel="stylesheet">
+  <link rel="stylesheet" href="http://static.moskovka.su/css/new.min.css">
+
+  <script>
+    var _gaq = [['_setAccount', 'UA-298210-6'], ['_trackPageview'], ['_trackPageLoadTime']];
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+  <script src="http://vkontakte.ru/js/api/share.js?11" charset="windows-1251"></script>
+</head>
+
+<body>
+
+  <div id="wrapper">
+    <header>
+      <hgroup>
+        <h1><a href="/">Алён@ Алёшкина</a></h1>
+        <h2>специалист по интернет-маркетингу</h2>
+      </hgroup>
+    </header>
+
+    <section>
+      {block:SearchPage}
+      <div class="search">
+        Результат(ов): <strong>{SearchResultCount}</strong>
+        Вы искали: &laquo;<em>{SearchQuery}</em>&raquo;
+      </div>
+      {/block:SearchPage}
+
+      {block:Posts}
+      <article>
+        {block:Regular}
+          {block:Title}
+            <header>
+              <h2><a href="{Permalink}">{Title}</a></h2>
+              <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24Hour}:{Minutes}:{Seconds}"><a href="{Permalink}" class="permalink">{block:NewDayDate}{Month} {DayOfMonth}, {Year} at {/block:NewDayDate}{12Hour}:{Minutes}{AmPm}</a></time>
+              {block:PermalinkPage}{block:HasTags}<span class="tags">{block:Tags}<a href="{TagURL}">{Tag}</a> {/block:Tags}</span>{/block:HasTags}{/block:PermalinkPage}
+            </header>
+          {/block:Title}
+          <section>{Body}</section>
+        {/block:Regular}
+
+        {block:Photo}
+        <section class="photo">
+          <figure>
+            {LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" title="{PhotoAlt}" width="500">{LinkCloseTag}
+            <figcaption>{Caption}</figcaption>
+          </figure>
+        </section>
+        {/block:Photo}
+
+        {block:Quote}
+        <section class="quote">
+          <blockquote class="{Length}_quote">{Quote}</blockquote>
+          {block:Source}<p>&mdash;&nbsp;{Source}</p>{/block:Source}
+        </section>
+        {/block:Quote}
+
+        {block:Video}
+        <section class="video">
+          {Video-500}
+          {Caption}
+        </section>
+        {/block:Video}
+
+        {block:Audio}
+        <section class="audio">
+          {AudioPlayerGrey}
+          {Caption}
+        </section>
+        {/block:Audio}
+
+        {block:Link}
+          <header>
+            <h2><a href="{URL}" rel="nofollow" {Target}>{Name}</a>&nbsp;&rarr;</h2>
+            <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24Hour}:{Minutes}:{Seconds}"><a href="{Permalink}" class="permalink">{block:NewDayDate}{Month} {DayOfMonth}, {Year} at {/block:NewDayDate}{12Hour}:{Minutes}{AmPm}</a></time>
+          </header>
+          {block:Description}
+          <section>{Description}</section>
+          {/block:Description}
+        {/block:Link}
+
+        {block:Chat}
+          {block:Title}
+          <header>
+            <h2><a href="{Permalink}">{Title}</a></h2>
+            <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24Hour}:{Minutes}:{Seconds}"><a href="{Permalink}" class="permalink">{block:NewDayDate}{Month} {DayOfMonth}, {Year} at {/block:NewDayDate}{12Hour}:{Minutes}{AmPm}</a></time>
+          </header>
+          {/block:Title}
+          {block:Lines}
+          <section class="chat">
+            {block:Label}<strong>{Label}</strong>{/block:Label} {Line}
+          </section>
+          {/block:Lines}
+        {/block:Chat}
+
+        <footer{block:PermalinkPage} class="permalink"{/block:PermalinkPage}>
+          <script>document.write(VK.Share.button({url:"{Permalink}"},{type:"round",text:"Мне нравится"}));</script>
+          <div class="g-plusone" data-size="small" data-href="{Permalink}"></div>
+          <iframe src="http://www.facebook.com/plugins/like.php?href={Permalink}&amp;layout=button_count&amp;show_faces=false&amp;width=100&amp;action=like&amp;font=trebuchet+ms&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none;overflow:hidden;width:100px;height:21px;" allowTransparency="true"></iframe>
+          <a href="http://twitter.com/share" class="twitter-share-button" data-url="{Permalink}"{block:Title} data-text="{Title}"{/block:Title} data-count="horizontal" data-via="moskovka">Tweet</a>
+
+          {block:IndexPage}
+          <p class="read_more_container">
+            {block:More}<a href="{Permalink}">Читать полностью &#x2192;</a>{/block:More}
+            {block:Chat}<a href="{Permalink}">Комментировать &#x2192;</a>{/block:Chat}
+            {block:Link}<a href="{Permalink}">Комментировать &#x2192;</a>{/block:Link}
+            {block:Audio}<a href="{Permalink}">Комментировать &#x2192;</a>{/block:Audio}
+            {block:Video}<a href="{Permalink}">Комментировать &#x2192;</a>{/block:Video}
+            {block:Quote}<a href="{Permalink}">Комментировать &#x2192;</a>{/block:Quote}
+            {block:Photo}<a href="{Permalink}">Комментировать &#x2192;</a>{/block:Photo}
+            &nbsp;
+          </p>
+          {/block:IndexPage}
+        </footer>
+
+        {block:PermalinkPage}
+        <aside>
+          <div id="fb-root"></div>
+          <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+          <fb:comments href="{Permalink}" num_posts="10" width="600"></fb:comments>
+
+          {block:PostNotes}<div class="notes"><h3>Заметки</h3><noindex>{PostNotes}</noindex></div>{/block:PostNotes}
+        </aside>
+        {/block:PermalinkPage}
+      </article>
+      {/block:Posts}
+    </section>
+
+    <div class="images">
+      <img src="http://static.moskovka.su/i/moskovka3.png" width="100" height="103" alt="Алёнка" class="moskovka3">
+      <img src="http://static.moskovka.su/i/moskovka4.png" width="100" height="100" alt="Алёнка" class="moskovka4">
+      <img src="http://static.moskovka.su/i/moskovka1.png" width="100" height="94" alt="Алёнка" class="moskovka1">
+    </div>
+
+    <div class="services">
+      <a href="http://twitter.com/moskovka" rel="author" class="twitter"><img src="http://static.moskovka.su/i/twitter.png" width="32" height="32" alt="Twitter" title="Twitter"></a>
+      <a href="http://facebook.com/efimova" rel="author" class="facebook"><img src="http://static.moskovka.su/i/facebook.png" width="32" height="32" alt="Facebook" title="Facebook"></a>
+      <a href="http://vk.com/moskovka" rel="author" class="vkontakte"><img src="http://static.moskovka.su/i/vkontakte.png" width="32" height="32" alt="ВКонтакте" title="ВКонтакте"></a>
+      <a href="http://gplus.to/moskovka" rel="author" class="googleplus"><img src="http://static.moskovka.su/i/googleplus.png" width="32" height="32" alt="Google+" title="Google+"></a>
+    </div>
+
+    <div class="paginator">
+      {block:Pagination}
+        {block:NextPage}<span class="left"><a href="{NextPage}">&larr;&nbsp;Назад</a></span> / {/block:NextPage}
+        <span class="center">cтраница {CurrentPage} из {TotalPages}</span>
+        {block:PreviousPage} / <span class="right"><a href="{PreviousPage}">Вперёд&nbsp;&rarr;</a></span>{/block:PreviousPage}
+      {/block:Pagination}
+
+      {block:PermalinkPagination}
+        {block:NextPost}<span class="left"><a href="{NextPost}">&larr;&nbsp;Следующая запись</a></span>{/block:NextPost}
+        {block:PreviousPost}<span class="right"><a href="{PreviousPost}">Предыдущая запись&nbsp;&rarr;</a></span>{/block:PreviousPost}
+      {/block:PermalinkPagination}
+    </div>
+
+    <nav>
+      <form action="/search" method="get">
+        <input type="search" name="q" value="{SearchQuery}" placeholder="Поиск"> <input type="submit" name="submit" value="Искать">
+      </form>
+
+      <ul>
+        <li><a href="/">Последние записи</a></li>
+        <li><a href="/mobile/">Мобильная версия</a></li>
+        <li><a href="/archive/">Архив</a></li>
+        <li><a href="http://feeds.feedburner.com/simonenko/alena">RSS</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <footer>
+    &copy; 2011 Алён@ Алёшкина. Отдельное спасибо <a href="http://blog.simonenko.su">Лёше</a> за тему блога.
+  </footer>
+
+  <script src="http://platform.twitter.com/widgets.js"></script>
+  <script src="https://apis.google.com/js/plusone.js">{lang:'ru'}</script>
+</body>
+</html>
