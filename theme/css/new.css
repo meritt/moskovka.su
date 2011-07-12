@@ -48,7 +48,8 @@ body{background-color:rgba(101, 157, 191, 0.5);background-image:-o-linear-gradie
 #wrapper>section{padding:30px 25px 0;}#wrapper>section article{margin:25px 0;padding-bottom:25px;border-bottom:2px dashed rgba(101, 157, 191, 0.3);}
 #wrapper>section header time{font-size:0.8em;}#wrapper>section header time a{border:none;}
 #wrapper>section header .tags{margin-left:10px;font-size:0.8em;}#wrapper>section header .tags a{margin:0 2px;border:none;}#wrapper>section header .tags a:before{content:'#';}
-#wrapper>section section a.image,#wrapper>section section a.image:link,#wrapper>section section a.image:visited{border:none;}
+#wrapper>section section p.image a,#wrapper>section section p.image a:link,#wrapper>section section p.image a:visited{border:none;}
+#wrapper>section section p.image img{-webkit-border-radius:8px;-moz-border-radius:8px;border-radius:8px;-webkit-background-clip:padding-box;-moz-background-clip:padding;background-clip:padding-box;-webkit-box-shadow:1px 1px 8px #aaaaaa;-moz-box-shadow:1px 1px 8px #aaaaaa;box-shadow:1px 1px 8px #aaaaaa;}
 #wrapper>section section.quote blockquote{line-height:1.4em;}
 #wrapper>section section.quote .short_quote,#wrapper>section section.quote .large_quote{font-size:2.2em;}
 #wrapper>section section.quote .medium_quote{font-size:1.8em;}
