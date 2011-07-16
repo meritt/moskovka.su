@@ -79,7 +79,7 @@
               {block:Date}
               <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24Hour}:{Minutes}:{Seconds}"><a href="{Permalink}" class="permalink">{block:NewDayDate}{Month} {DayOfMonth}, {Year} at {/block:NewDayDate}{12Hour}:{Minutes}{AmPm}</a></time>
               {/block:Date}
-              {block:PermalinkPage}{block:HasTags}<span class="tags">{block:Tags}<a href="{TagURL}">{Tag}</a> {/block:Tags}</span>{/block:HasTags}{/block:PermalinkPage}
+              {block:PermalinkPage}{block:HasTags}<span class="tags">{block:Tags}<a href="{TagURL}" rel="tag">{Tag}</a> {/block:Tags}</span>{/block:HasTags}{/block:PermalinkPage}
             </header>
           {/block:Title}
           <section class="text">{Body}</section>
