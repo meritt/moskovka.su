@@ -164,24 +164,30 @@ div.images {
   z-index: 1;
   margin: 0 auto;
 
-  .moskovka1, .moskovka2, .moskovka3, .moskovka4 {
+  .moskovka1, .moskovka3, .moskovka4 {
     position: absolute;
     z-index: 2;
-    .border-radius(50px);
+    .border-radius(75px);
     .box-shadow(8px, rgb(120, 120, 120));
+    .scale(0.8);
+
+    &:hover {
+      z-index: 10;
+      .scale(1);
+    }
   }
 
   .moskovka1 {
     margin-top: -60px;
-    margin-left: 20px;
+    margin-left: 0;
   }
   .moskovka3 {
     margin-top: 30px;
-    margin-left: -70px;
+    margin-left: -90px;
   }
   .moskovka4 {
     margin-top: -40px;
-    margin-left: -50px;
+    margin-left: -70px;
   }
 }
 
@@ -199,8 +205,8 @@ div.services {
     width: 32px;
     height: 32px;
     margin-left: -20px;
-    border: none !important;
     .box-shadow(8px, #aaaaaa);
+    border: none !important;
 
     &:hover {
       .rotate();
