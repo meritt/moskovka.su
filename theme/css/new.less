@@ -40,6 +40,18 @@ body {
   >section {
     padding: 30px 35px 0;
 
+    h1 {
+      font-size: 1.5em;
+    }
+    h2 {
+      margin: 10px 0 0;
+      font-size: 1.1em;
+    }
+
+    img[align=left] {
+      margin-right: 10px;
+    }
+
     article {
       margin: 25px 0;
       padding-bottom: 25px;
@@ -98,6 +110,15 @@ body {
       img {
         .border-radius(8px);
         .box-shadow(8px, #aaaaaa);
+      }
+    }
+
+    .no-shadow {
+      img {
+        .border-radius(none);
+        -webkit-box-shadow: none;
+           -moz-box-shadow: none;
+                box-shadow: none;
       }
     }
 
@@ -274,6 +295,10 @@ body > footer {
   text-align: center;
 
   .awesome-link();
+}
+
+.clear {
+  clear: both;
 }
 
 ::selection {
