@@ -75,7 +75,7 @@
         {block:Text}
           {block:Title}
             <header>
-              <h1><a href="{Permalink}">{Title}</a></h1>
+              <h1><a href="{Permalink}" rel="bookmark">{Title}</a></h1>
               {block:Date}
               <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24Hour}:{Minutes}:{Seconds}"><a href="{Permalink}" class="permalink">{block:NewDayDate}{Month} {DayOfMonth}, {Year} at {/block:NewDayDate}{12Hour}:{Minutes}{AmPm}</a></time>
               {/block:Date}
@@ -162,7 +162,7 @@
 
         {block:Answer}
           <header>
-            <h1><a href="{Permalink}">{Question}</a></h1>
+            <h1><a href="{Permalink}" rel="bookmark">{Question}</a></h1>
             {block:Date}
             <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24Hour}:{Minutes}:{Seconds}"><a href="{Permalink}" class="permalink">{block:NewDayDate}{Month} {DayOfMonth}, {Year} at {/block:NewDayDate}{12Hour}:{Minutes}{AmPm}</a></time>
             {/block:Date}
