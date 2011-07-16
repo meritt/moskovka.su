@@ -33,6 +33,11 @@
   <link rel="canonical" href="{Permalink}">
   {/block:PermalinkPage}
 
+  {block:PermalinkPagination}
+  {block:NextPost}<link rel="next" href="{NextPost}">{/block:NextPost}
+  {block:PreviousPost}<link rel="prev" href="{PreviousPost}">{/block:PreviousPost}
+  {/block:PermalinkPagination}
+
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Forum&amp;subset=cyrillic,latin&amp;v1">
   <link rel="stylesheet" href="http://static.moskovka.su/css/new.min.css">
 
