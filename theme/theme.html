@@ -70,6 +70,17 @@
           <section class="regular">{Body}</section>
         {/block:Regular}
 
+        {block:Answer}
+          <header>
+            <h2>{Question}</h2>
+            {block:Date}
+            <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24Hour}:{Minutes}:{Seconds}"><a href="{Permalink}" class="permalink">{block:NewDayDate}{Month} {DayOfMonth}, {Year} at {/block:NewDayDate}{12Hour}:{Minutes}{AmPm}</a></time>
+            {/block:Date}
+            <span class="asker">от {Asker}</span>
+          </header>
+          <section class="answer">{Answer}</section>
+        {/block:Answer}
+
         {block:Photo}
         <section class="photo">
           <figure>
@@ -141,6 +152,7 @@
             {block:Video}<a href="{Permalink}">Комментировать &#x2192;</a>{/block:Video}
             {block:Quote}<a href="{Permalink}">Комментировать &#x2192;</a>{/block:Quote}
             {block:Photo}<a href="{Permalink}">Комментировать &#x2192;</a>{/block:Photo}
+            {block:Answer}<a href="{Permalink}">Комментировать &#x2192;</a>{/block:Answer}
             &nbsp;
           </p>
           {/block:IndexPage}
