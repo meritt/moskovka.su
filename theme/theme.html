@@ -23,7 +23,7 @@
   <link rel="icon" href="{Favicon}">
   <link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/simonenko/alena">
 
-  <link href="http://fonts.googleapis.com/css?family=Forum&amp;subset=cyrillic,latin&amp;v1" rel="stylesheet">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Forum&amp;subset=cyrillic,latin&amp;v1">
   <link rel="stylesheet" href="http://static.moskovka.su/css/new.min.css">
 
   <script>
@@ -57,7 +57,7 @@
 
       {block:Posts}
       <article>
-        {block:Regular}
+        {block:Text}
           {block:Title}
             <header>
               <h2><a href="{Permalink}">{Title}</a></h2>
@@ -68,27 +68,29 @@
             </header>
           {/block:Title}
           <section class="regular">{Body}</section>
-        {/block:Regular}
-
-        {block:Answer}
-          <header>
-            <h2>{Question}</h2>
-            {block:Date}
-            <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24Hour}:{Minutes}:{Seconds}"><a href="{Permalink}" class="permalink">{block:NewDayDate}{Month} {DayOfMonth}, {Year} at {/block:NewDayDate}{12Hour}:{Minutes}{AmPm}</a></time>
-            {/block:Date}
-            <span class="asker">от {Asker}</span>
-          </header>
-          <section class="answer">{Answer}</section>
-        {/block:Answer}
+        {/block:Text}
 
         {block:Photo}
-        <section class="photo">
+        <section class="image">
           <figure>
-            {LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" title="{PhotoAlt}" width="500">{LinkCloseTag}
-            <figcaption>{Caption}</figcaption>
+            {LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" title="{PhotoAlt}">{LinkCloseTag}
+            {block:Caption}
+              <figcaption>{Caption}</figcaption>
+            {/block:Caption}
           </figure>
         </section>
         {/block:Photo}
+
+        {block:Photoset}
+        <section class="image photoset">
+          <figure>
+            {Photoset-500}
+            {block:Caption}
+              <figcaption>{Caption}</figcaption>
+            {/block:Caption}
+          </figure>
+        </section>
+        {/block:Photoset}
 
         {block:Quote}
         <section class="quote">
@@ -96,20 +98,6 @@
           {block:Source}<p>&mdash;&nbsp;{Source}</p>{/block:Source}
         </section>
         {/block:Quote}
-
-        {block:Video}
-        <section class="video">
-          {Video-500}
-          {Caption}
-        </section>
-        {/block:Video}
-
-        {block:Audio}
-        <section class="audio">
-          {AudioPlayerGrey}
-          {Caption}
-        </section>
-        {/block:Audio}
 
         {block:Link}
           <header>
@@ -128,20 +116,51 @@
             <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24Hour}:{Minutes}:{Seconds}"><a href="{Permalink}" class="permalink">{block:NewDayDate}{Month} {DayOfMonth}, {Year} at {/block:NewDayDate}{12Hour}:{Minutes}{AmPm}</a></time>
           </header>
           {/block:Title}
-          {block:Lines}
           <section class="chat">
-            {block:Label}<strong>{Label}</strong>{/block:Label} {Line}
-          </section>
+          {block:Lines}
+            <p>{block:Label}<strong>{Label}</strong>{/block:Label} {Line}</p>
           {/block:Lines}
+          </section>
         {/block:Chat}
 
+        {block:Video}
+        <section class="video">
+          <figure>
+          {Video-500}
+          {block:Caption}
+            <figcaption>{Caption}</figcaption>
+          {/block:Caption}
+          </figure>
+        </section>
+        {/block:Video}
+
+        {block:Audio}
+        <section class="audio">
+          <figure>
+          {AudioPlayerBlack}
+          {block:Caption}
+            <figcaption>{Caption}</figcaption>
+          {/block:Caption}
+          </figure>
+        </section>
+        {/block:Audio}
+
+        {block:Answer}
+          <header>
+            <h2>{Question}</h2>
+            {block:Date}
+            <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24Hour}:{Minutes}:{Seconds}"><a href="{Permalink}" class="permalink">{block:NewDayDate}{Month} {DayOfMonth}, {Year} at {/block:NewDayDate}{12Hour}:{Minutes}{AmPm}</a></time>
+            {/block:Date}
+            <span class="asker">вопрос от {Asker}</span>
+          </header>
+          <section class="answer">{Answer}</section>
+        {/block:Answer}
+
         <footer{block:PermalinkPage} class="permalink"{/block:PermalinkPage}>
-          {block:NoteCount}
-          <script>document.write(VK.Share.button({url:"{Permalink}"},{type:"round",text:"Мне нравится"}));</script>
+          <script>document.write(VK.Share.button({url:"{Permalink}"},{type:"round",text:"Мне нравится"}))</script>
           <div class="g-plusone" data-size="small" data-href="{Permalink}"></div>
           <iframe src="http://www.facebook.com/plugins/like.php?href={Permalink}&amp;layout=button_count&amp;show_faces=false&amp;width=100&amp;action=like&amp;font=trebuchet+ms&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none;overflow:hidden;width:100px;height:21px;" allowTransparency="true"></iframe>
           <a href="http://twitter.com/share" class="twitter-share-button" data-url="{Permalink}"{block:Title} data-text="{Title}"{/block:Title} data-count="horizontal" data-via="moskovka">Tweet</a>
-          {/block:NoteCount}
 
           {block:IndexPage}
           <p class="read_more_container">

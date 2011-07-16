@@ -51,7 +51,7 @@ body {
   }
 
   >section {
-    padding: 30px 25px 0;
+    padding: 30px 35px 0;
 
     article {
       margin: 25px 0;
@@ -87,19 +87,6 @@ body {
       }
     }
 
-    section {
-      p.image {
-        a, a:link, a:visited {
-          border: none;
-        }
-
-        img {
-          .border-radius(8px);
-          .box-shadow(8px, #aaaaaa);
-        }
-      }
-    }
-
     section.quote {
       blockquote {
         line-height: 1.4em;
@@ -113,6 +100,17 @@ body {
       }
       .small_quote {
         font-size: 1.4em;
+      }
+    }
+
+    .image {
+      a, a:link, a:visited {
+        border: none;
+      }
+
+      img {
+        .border-radius(8px);
+        .box-shadow(8px, #aaaaaa);
       }
     }
 
@@ -155,6 +153,8 @@ body {
       border-top: 2px dashed rgba(101, 157, 191, 0.3);
 
       .notes {
+        padding-top: 15px;
+
         a, a:link, a:visited {
           border: none;
         }
