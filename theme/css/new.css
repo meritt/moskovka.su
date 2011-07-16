@@ -65,9 +65,12 @@ div.images .moskovka3{margin-top:30px;margin-left:-70px;}
 div.images .moskovka4{margin-top:-40px;margin-left:-50px;}
 div.services{position:absolute;top:0;right:0;z-index:1;margin:0 auto;}div.services a,div.services a:link,div.services a:visited{position:absolute;z-index:2;display:block;width:32px;height:32px;margin-left:-20px;border:none !important;-webkit-box-shadow:1px 1px 8px #aaaaaa;-moz-box-shadow:1px 1px 8px #aaaaaa;box-shadow:1px 1px 8px #aaaaaa;}div.services a:hover,div.services a:link:hover,div.services a:visited:hover{-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg);zoom:1;}
 div.services .twitter{margin-top:10px;}
-div.services .facebook{margin-top:50px;}
+div.services .googleplus{margin-top:50px;}
 div.services .vkontakte{margin-top:90px;}
-div.services .googleplus{margin-top:130px;}
+div.services .facebook{margin-top:130px;}
+div.services .youtube{margin-top:170px;}
+div.services .vimeo{margin-top:210px;}
+div.services .rssfeed{margin-top:250px;}
 div.paginator{padding:0 0 15px;text-align:center;}div.paginator span{padding:0 4px;}
 nav{padding-bottom:4px;text-align:center;}nav ul{margin:0 0 10px;}
 nav li{display:inline-block;padding:0 6px;}
