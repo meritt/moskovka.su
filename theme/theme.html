@@ -171,7 +171,8 @@
 
           {block:IndexPage}
           <p class="read_more_container">
-            {block:More}<a href="{Permalink}">Читать полностью &#x2192;</a>{/block:More}
+            {block:More}<!-- more -->{/block:More}
+            {block:Text}<a href="{Permalink}">Читать полностью &#x2192;</a>{/block:Text}
             {block:Chat}<a href="{Permalink}">Комментировать &#x2192;</a>{/block:Chat}
             {block:Link}<a href="{Permalink}">Комментировать &#x2192;</a>{/block:Link}
             {block:Audio}<a href="{Permalink}">Комментировать &#x2192;</a>{/block:Audio}
@@ -251,6 +252,7 @@
 
   <script src="http://platform.twitter.com/widgets.js"></script>
   <script src="https://apis.google.com/js/plusone.js">{lang:'ru'}</script>
+  {block:PermalinkPage}
   <script>
     if ('{PostID}' === '') {
       comments = document.getElementById('comments');
@@ -260,5 +262,6 @@
       social.parentNode.removeChild(social);
     }
   </script>
+  {/block:PermalinkPage}
 </body>
 </html>
