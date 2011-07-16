@@ -156,7 +156,7 @@
           <section class="answer">{Answer}</section>
         {/block:Answer}
 
-        <footer{block:PermalinkPage} class="permalink"{/block:PermalinkPage}>
+        <footer{block:PermalinkPage} id="social"{/block:PermalinkPage}>
           <script>document.write(VK.Share.button({url:"{Permalink}"},{type:"round",text:"Мне нравится"}))</script>
           <div class="g-plusone" data-size="small" data-href="{Permalink}"></div>
           <iframe src="http://www.facebook.com/plugins/like.php?href={Permalink}&amp;layout=button_count&amp;show_faces=false&amp;width=100&amp;action=like&amp;font=trebuchet+ms&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none;overflow:hidden;width:100px;height:21px;" allowTransparency="true"></iframe>
@@ -248,6 +248,9 @@
     if ('{PostID}' === '') {
       comments = document.getElementById('comments');
       comments.parentNode.removeChild(comments);
+
+      social = document.getElementById('social');
+      social.parentNode.removeChild(social);
     }
   </script>
 </body>
