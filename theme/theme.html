@@ -67,7 +67,7 @@
               {block:PermalinkPage}{block:HasTags}<span class="tags">{block:Tags}<a href="{TagURL}">{Tag}</a> {/block:Tags}</span>{/block:HasTags}{/block:PermalinkPage}
             </header>
           {/block:Title}
-          <section class="regular">{Body}</section>
+          <section class="text">{Body}</section>
         {/block:Text}
 
         {block:Photo}
@@ -147,7 +147,7 @@
 
         {block:Answer}
           <header>
-            <h2>{Question}</h2>
+            <h2><a href="{Permalink}">{Question}</a></h2>
             {block:Date}
             <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24Hour}:{Minutes}:{Seconds}"><a href="{Permalink}" class="permalink">{block:NewDayDate}{Month} {DayOfMonth}, {Year} at {/block:NewDayDate}{12Hour}:{Minutes}{AmPm}</a></time>
             {/block:Date}
@@ -177,17 +177,15 @@
           {/block:IndexPage}
         </footer>
 
-        {block:PermalinkPage}
-        {block:NoteCount}
-        <aside>
+        {block:Permalink}
+        <aside id="comments">
           <div id="fb-root"></div>
           <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
           <fb:comments href="{Permalink}" num_posts="10" width="600"></fb:comments>
 
           {block:PostNotes}<div class="notes"><h3>Заметки</h3><noindex>{PostNotes}</noindex></div>{/block:PostNotes}
         </aside>
-        {/block:NoteCount}
-        {/block:PermalinkPage}
+        {/block:Permalink}
       </article>
       {/block:Posts}
     </section>
@@ -246,5 +244,11 @@
 
   <script src="http://platform.twitter.com/widgets.js"></script>
   <script src="https://apis.google.com/js/plusone.js">{lang:'ru'}</script>
+  <script>
+    if ('{PostID}' === '') {
+      comments = document.getElementById('comments');
+      comments.parentNode.removeChild(comments);
+    }
+  </script>
 </body>
 </html>
