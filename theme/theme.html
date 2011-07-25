@@ -41,14 +41,6 @@
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Forum&amp;subset=cyrillic,latin&amp;v1">
   <link rel="stylesheet" href="http://static.moskovka.su/css/new.min.css">
 
-  <script>
-    var _gaq = [['_setAccount', 'UA-298210-6'], ['_trackPageview'], ['_trackPageLoadTime']];
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
   <script src="http://vkontakte.ru/js/api/share.js?11" charset="windows-1251"></script>
 </head>
 
@@ -256,9 +248,18 @@
   </footer>
 
   <div id="fb-root"></div>
-  <script src="http://connect.facebook.net/ru_RU/all.js#xfbml=1"></script>
-  <script src="http://platform.twitter.com/widgets.js"></script>
-  <script src="https://apis.google.com/js/plusone.js">{lang:'ru'}</script>
+  <script>
+    (function(w, d) {
+       w._gaq = [['_setAccount','UA-298210-6'], ['_trackPageview'], ['_trackPageLoadTime']];
+       var u = [
+         '//connect.facebook.net/ru_RU/all.js#xfbml=1', // Facebook SDK
+         '//platform.twitter.com/widgets.js',           // Twitter Widgets
+         'https://apis.google.com/js/plusone.js',       // Google +1 Button
+         ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js' // Google Analytics
+       ],
+       i=u.length,n='script',f=d.createDocumentFragment(),e=d.createElement(n),t;while(i--){t=e.cloneNode(false);t.async=t.src=u[i];f.appendChild(t);}(t=d.getElementsByTagName(n)[0]).parentNode.insertBefore(f,t);
+    }(this, document));
+  </script>
   {block:PermalinkPage}
   <script>
     if ('{PostID}' === '') {
