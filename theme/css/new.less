@@ -125,7 +125,8 @@ body {
     footer {
       padding-top: 10px;
 
-      >table, >iframe, >div, >.fb_iframe_widget {
+      >iframe, >div, >.fb_iframe_widget {
+        clear: none !important;
         float: right !important;
       }
       >.fb_iframe_widget {
@@ -135,10 +136,11 @@ body {
       &#social {
         height: 30px;
 
-        >table, >iframe, >div, >.fb_iframe_widget {
+        >iframe, >div, >.fb_iframe_widget {
+          clear: none !important;
           float: left !important;
         }
-        >table, >.fb_iframe_widget {
+        >.fb_iframe_widget {
           margin-right: 15px !important;
         }
       }

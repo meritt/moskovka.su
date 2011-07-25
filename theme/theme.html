@@ -41,7 +41,8 @@
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Forum&amp;subset=cyrillic,latin&amp;v1">
   <link rel="stylesheet" href="http://static.moskovka.su/css/new.min.css">
 
-  <script src="http://vkontakte.ru/js/api/share.js?11" charset="windows-1251"></script>
+  <script src="http://userapi.com/js/api/openapi.js?34"></script>
+  <script>VK.init({apiId:2422693,onlyWidgets:true})</script>
 </head>
 
 <body>
@@ -164,10 +165,15 @@
         {/block:Answer}
 
         <footer{block:PermalinkPage} id="social"{/block:PermalinkPage}>
-          <script>document.write(VK.Share.button({url:"{Permalink}"},{type:"round",text:"Мне нравится"}))</script>
+          {block:IndexPage}
+          <div id="vk_like_{PostID}"></div><script>VK.Widgets.Like("vk_like_{PostID}",{pageUrl:"{Permalink}",pageTitle:"{block:Title}{Title}{/block:Title}{block:Link}{Name}{/block:Link}{block:Answer}{Question}{/block:Answer}",type:"mini",verb:"1"})</script>
+          {/block:IndexPage}
           <fb:like href="{Permalink}" send="false" layout="button_count" width="50" show_faces="false" font=""></fb:like>
           <div class="g-plusone" data-size="small" data-href="{Permalink}"></div>
-          <a href="http://twitter.com/share" rel="external" class="twitter-share-button" data-url="{Permalink}"{block:Title} data-text="{Title}"{/block:Title} data-count="horizontal" data-via="moskovka">Tweet</a>
+          <a href="http://twitter.com/share" rel="external" class="twitter-share-button" data-url="{Permalink}"{block:Title} data-text="{Title}"{/block:Title}{block:Link} data-text="{Name}"{/block:Link}{block:Answer} data-text="{Question}"{/block:Answer} data-count="horizontal" data-via="moskovka">Tweet</a>
+          {block:PermalinkPage}
+          <div id="vk_like_{PostID}"></div><script>VK.Widgets.Like("vk_like_{PostID}",{pageUrl:"{Permalink}",pageTitle:"{block:Title}{Title}{/block:Title}{block:Link}{Name}{/block:Link}{block:Answer}{Question}{/block:Answer}",type:"button",verb:"1"})</script>
+          {/block:PermalinkPage}
 
           {block:IndexPage}
           <p class="read_more_container">
