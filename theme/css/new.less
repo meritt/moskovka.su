@@ -125,18 +125,21 @@ body {
     footer {
       padding-top: 10px;
 
-      >table, >iframe, >div {
+      >table, >iframe, >div, >.fb_iframe_widget {
         float: right !important;
+      }
+      >.fb_iframe_widget {
+        margin-right: 15px !important;
       }
 
       &#social {
         height: 30px;
 
-        >table, >iframe, >div {
+        >table, >iframe, >div, >.fb_iframe_widget {
           float: left !important;
         }
-        >table {
-          margin-right: 20px;
+        >table, >.fb_iframe_widget {
+          margin-right: 15px !important;
         }
       }
     }
