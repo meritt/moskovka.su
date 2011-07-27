@@ -255,15 +255,16 @@
 
   <div id="fb-root"></div>
   <script>
+    window.___gcfg = {lang: 'ru'};
     (function(w, d) {
-       w._gaq = [['_setAccount','UA-298210-6'], ['_trackPageview'], ['_trackPageLoadTime']];
-       var u = [
-         '//connect.facebook.net/ru_RU/all.js#xfbml=1', // Facebook SDK
-         '//platform.twitter.com/widgets.js',           // Twitter Widgets
-         'https://apis.google.com/js/plusone.js',       // Google +1 Button
-         ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js' // Google Analytics
-       ],
-       i=u.length,n='script',f=d.createDocumentFragment(),e=d.createElement(n),t;while(i--){t=e.cloneNode(false);t.async=t.src=u[i];f.appendChild(t);}(t=d.getElementsByTagName(n)[0]).parentNode.insertBefore(f,t);
+      w._gaq = [['_setAccount','UA-298210-6'], ['_trackPageview'], ['_trackPageLoadTime']];
+      var u = [
+        '//connect.facebook.net/ru_RU/all.js#xfbml=1', // Facebook SDK
+        '//platform.twitter.com/widgets.js',           // Twitter Widgets
+        'https://apis.google.com/js/plusone.js',       // Google +1 Button
+        ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js' // Google Analytics
+      ],
+      i=u.length,n='script',f=d.createDocumentFragment(),e=d.createElement(n),t;while(i--){t=e.cloneNode(false);t.async=t.src=u[i];f.appendChild(t);}(t=d.getElementsByTagName(n)[0]).parentNode.insertBefore(f,t);
     }(this, document));
   </script>
   {block:PermalinkPage}
