@@ -7,7 +7,6 @@
   <title>{block:PermalinkPage}{block:Posts}{block:PostTitle}{PostTitle} &mdash; {/block:PostTitle}{block:Link}{Name} &mdash; {/block:Link}{block:Answer}{Question} &mdash; {/block:Answer}{/block:Posts}{/block:PermalinkPage}{block:SearchPage}Поиск по &quot;{SearchQuery}&quot; &mdash; {/block:SearchPage}{block:TagPage}Поиск по метке &quot;{Tag}&quot; &mdash; {/block:TagPage}{Title}{block:IndexPage} &mdash; {Description}{/block:IndexPage}</title>
   <meta name="description" content='{block:IndexPage}{Title} — {Description}{/block:IndexPage}{block:PostTitle}{Title} о "{PostTitle}"{/block:PostTitle}'>
   <meta name="keywords" content="{block:IndexPage}SEO, SMM, интернет маркетинг, продвижение сайтов, moskovka{/block:IndexPage}{block:PermalinkPage}{block:Posts}{block:Tags}{Tag}, {/block:Tags}{/block:HasTags}{/block:Posts}{/block:PermalinkPage}">
-  <meta name="author" content="Alena *moskovka* Efimova">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -19,9 +18,12 @@
   <meta property="og:image" content="http://static.moskovka.su/i/moskovka3.png">
   <meta property="og:image" content="http://static.moskovka.su/i/moskovka4.png">
   {block:PermalinkPage}
-  <meta property="og:author" content="Alena *moskovka* Efimova">
+  <meta name="author" property="og:author" content="Alena *moskovka* Efimova">
   <meta property="fb:admins" content="551999437,602184780">
   {/block:PermalinkPage}
+
+  <link rel="dns-prefetch" href="http://static.moskovka.su">
+  <link rel="publisher" href="https://plus.google.com/112455200448484588013/">
 
   <meta name="google-site-verification" content="PEmroTZuNnOqyA_NjnbNjILTsK1p-Cg5bOdsI9U-PJE">
   <meta name="yandex-verification" content="4cefe77baf17ea27">
@@ -38,11 +40,10 @@
   {block:PreviousPost}<link rel="prev" href="{PreviousPost}">{/block:PreviousPost}
   {/block:PermalinkPagination}
 
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Forum&amp;subset=cyrillic,latin&amp;v1">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400italic,400,700&subset=latin,cyrillic">
   <link rel="stylesheet" href="http://static.moskovka.su/css/new.min.css">
 
-  <script src="http://userapi.com/js/api/openapi.js?34"></script>
-  <script>VK.init({apiId:2422693,onlyWidgets:true})</script>
+  <script>var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-298210-6"]),_gaq.push(["_trackPageview"]),_gaq.push(["_trackPageLoadTime"]),function(a,b){a.___gcfg={lang:"ru"};var c="http://serenity.su",d="vkontakte",e="facebook",f="twitter",g="like",h="unlike",i="_trackSocial",j={vkontakte:function(){try{VK&&VK.Observer&&VK.Observer.subscribe&&(VK.Observer.subscribe("widgets.like.liked",function(){_gaq.push([i,d,g,c])}),VK.Observer.subscribe("widgets.like.unliked",function(){_gaq.push([i,d,h,c])}))}catch(a){}},facebook:function(){try{FB&&FB.Event&&FB.Event.subscribe&&(FB.Event.subscribe("edge.create",function(){_gaq.push([i,e,g,c])}),FB.Event.subscribe("edge.remove",function(){_gaq.push([i,e,h,c])}),FB.Event.subscribe("message.send",function(){_gaq.push([i,e,"send",c])}))}catch(a){}},twitter:function(){try{twttr&&twttr.events&&twttr.events.bind&&twttr.events.bind("tweet",function(){_gaq.push([i,f,"tweet",c])})}catch(a){}}},k=["https://apis.google.com/js/plusone.js","//userapi.com/js/api/openapi.js?34","//platform.twitter.com/widgets.js","//connect.facebook.net/ru_RU/all.js#xfbml=1",("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js"],l=["",d,f,e,""],m=k.length,n="script",o=b.createDocumentFragment(),p=b.createElement(n),q;while(m--)q=p.cloneNode(!1),q.async=q.src=k[m],func=l[m],func&&func!=""&&(q.onload=j[func]),o.appendChild(q);q=b.getElementsByTagName(n)[0],q.parentNode.insertBefore(o,q),a.vkAsyncInit=function(){VK.init({apiId:2422693,onlyWidgets:!0});var a=b.querySelectorAll(".vk-like"),c=a.length,d,e,f;for(d=0;d<c;d++)f=a[d],e="vk_like_"+d,f.id=e,VK.Widgets.Like(e,{pageUrl:f.getAttribute("data-href"),pageTitle:f.getAttribute("data-title"),type:f.getAttribute("data-type"),verb:f.getAttribute("data-verb")})}}(this,document);</script>
 </head>
 
 <body>
@@ -70,9 +71,9 @@
             <header>
               <h1><a href="{Permalink}" rel="bookmark">{Title}</a></h1>
               {block:Date}
-              <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24Hour}:{Minutes}:{Seconds}"><a href="{Permalink}" class="permalink">{block:NewDayDate}{Month} {DayOfMonth}, {Year} at {/block:NewDayDate}{12Hour}:{Minutes}{AmPm}</a></time>
+              <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24Hour}:{Minutes}:{Seconds}"><a href="{Permalink}" class="permalink" rel="nofollow">{block:NewDayDate}{Month} {DayOfMonth}, {Year} at {/block:NewDayDate}{12Hour}:{Minutes}{AmPm}</a></time>
               {/block:Date}
-              {block:PermalinkPage}{block:HasTags}<span class="tags">{block:Tags}<a href="{TagURL}" rel="tag">{Tag}</a> {/block:Tags}</span>{/block:HasTags}{/block:PermalinkPage}
+              {block:PermalinkPage}{block:HasTags}<span class="tags">{block:Tags}<a href="{TagURL}" rel="tag nofollow">{Tag}</a> {/block:Tags}</span>{/block:HasTags}{/block:PermalinkPage}
             </header>
           {/block:Title}
           <section class="text">{Body}</section>
@@ -110,7 +111,7 @@
         {block:Link}
           <header>
             <h1><a href="{URL}" rel="external nofollow" {Target}>{Name}</a>&nbsp;&rarr;</h1>
-            <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24Hour}:{Minutes}:{Seconds}"><a href="{Permalink}" class="permalink">{block:NewDayDate}{Month} {DayOfMonth}, {Year} at {/block:NewDayDate}{12Hour}:{Minutes}{AmPm}</a></time>
+            <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24Hour}:{Minutes}:{Seconds}"><a href="{Permalink}" class="permalink" rel="nofollow">{block:NewDayDate}{Month} {DayOfMonth}, {Year} at {/block:NewDayDate}{12Hour}:{Minutes}{AmPm}</a></time>
           </header>
           {block:Description}
           <section class="link">{Description}</section>
@@ -121,7 +122,7 @@
           {block:Title}
           <header>
             <h1><a href="{Permalink}">{Title}</a></h1>
-            <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24Hour}:{Minutes}:{Seconds}"><a href="{Permalink}" class="permalink">{block:NewDayDate}{Month} {DayOfMonth}, {Year} at {/block:NewDayDate}{12Hour}:{Minutes}{AmPm}</a></time>
+            <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24Hour}:{Minutes}:{Seconds}"><a href="{Permalink}" class="permalink" rel="nofollow">{block:NewDayDate}{Month} {DayOfMonth}, {Year} at {/block:NewDayDate}{12Hour}:{Minutes}{AmPm}</a></time>
           </header>
           {/block:Title}
           <section class="chat">
@@ -157,7 +158,7 @@
           <header>
             <h1><a href="{Permalink}" rel="bookmark">{Question}</a></h1>
             {block:Date}
-            <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24Hour}:{Minutes}:{Seconds}"><a href="{Permalink}" class="permalink">{block:NewDayDate}{Month} {DayOfMonth}, {Year} at {/block:NewDayDate}{12Hour}:{Minutes}{AmPm}</a></time>
+            <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24Hour}:{Minutes}:{Seconds}"><a href="{Permalink}" class="permalink" rel="nofollow">{block:NewDayDate}{Month} {DayOfMonth}, {Year} at {/block:NewDayDate}{12Hour}:{Minutes}{AmPm}</a></time>
             {/block:Date}
             <span class="asker">вопрос от {Asker}</span>
           </header>
@@ -166,26 +167,26 @@
 
         <footer{block:PermalinkPage} id="social"{/block:PermalinkPage}>
           {block:IndexPage}
-          <div id="vk_like_{PostID}"></div><script>VK.Widgets.Like("vk_like_{PostID}",{pageUrl:"{Permalink}",pageTitle:"{block:Title}{Title}{/block:Title}{block:Link}{Name}{/block:Link}{block:Answer}{Question}{/block:Answer}",type:"mini",verb:"1"})</script>
+          <div class="vk-like" data-type="mini" data-verb="1" data-href="{Permalink}" data-title="{block:Title}{Title}{/block:Title}{block:Link}{Name}{/block:Link}{block:Answer}{Question}{/block:Answer}"></div>
           {/block:IndexPage}
-          <fb:like href="{Permalink}" send="false" layout="button_count" width="50" show_faces="false" font=""></fb:like>
-          <div class="g-plusone" data-size="small" data-href="{Permalink}"></div>
-          <a href="http://twitter.com/share" rel="external" class="twitter-share-button" data-url="{Permalink}"{block:Title} data-text="{Title}"{/block:Title}{block:Link} data-text="{Name}"{/block:Link}{block:Answer} data-text="{Question}"{/block:Answer} data-count="horizontal" data-via="moskovka">Tweet</a>
+          <div class="fb-like" data-href="{Permalink}" data-layout="button_count" data-send="false" data-show-faces="false"></div>
+          <div class="gp"><div class="g-plusone" data-size="medium" data-href="{Permalink}"></div></div>
+          <a href="http://twitter.com/share" rel="external nofollow" class="twitter-share-button" data-url="{Permalink}"{block:Title} data-text="{Title}"{/block:Title}{block:Link} data-text="{Name}"{/block:Link}{block:Answer} data-text="{Question}"{/block:Answer} data-count="horizontal" data-via="moskovka">Tweet</a>
           {block:PermalinkPage}
-          <div id="vk_like_{PostID}"></div><script>VK.Widgets.Like("vk_like_{PostID}",{pageUrl:"{Permalink}",pageTitle:"{block:Title}{Title}{/block:Title}{block:Link}{Name}{/block:Link}{block:Answer}{Question}{/block:Answer}",type:"button",verb:"1"})</script>
+          <div class="vk-like" data-type="button" data-verb="1" data-href="{Permalink}" data-title="{block:Title}{Title}{/block:Title}{block:Link}{Name}{/block:Link}{block:Answer}{Question}{/block:Answer}"></div>
           {/block:PermalinkPage}
 
           {block:IndexPage}
           <p class="read_more_container">
             {block:More}<!-- more -->{/block:More}
-            {block:Text}<a href="{Permalink}">Читать полностью &#x2192;</a>{/block:Text}
-            {block:Chat}<a href="{Permalink}">Комментировать &#x2192;</a>{/block:Chat}
-            {block:Link}<a href="{Permalink}">Комментировать &#x2192;</a>{/block:Link}
-            {block:Audio}<a href="{Permalink}">Комментировать &#x2192;</a>{/block:Audio}
-            {block:Video}<a href="{Permalink}">Комментировать &#x2192;</a>{/block:Video}
-            {block:Quote}<a href="{Permalink}">Комментировать &#x2192;</a>{/block:Quote}
-            {block:Photo}<a href="{Permalink}">Комментировать &#x2192;</a>{/block:Photo}
-            {block:Answer}<a href="{Permalink}">Комментировать &#x2192;</a>{/block:Answer}
+            {block:Text}<a href="{Permalink}" rel="nofollow">Читать полностью &#x2192;</a>{/block:Text}
+            {block:Chat}<a href="{Permalink}" rel="nofollow">Комментировать &#x2192;</a>{/block:Chat}
+            {block:Link}<a href="{Permalink}" rel="nofollow">Комментировать &#x2192;</a>{/block:Link}
+            {block:Audio}<a href="{Permalink}" rel="nofollow">Комментировать &#x2192;</a>{/block:Audio}
+            {block:Video}<a href="{Permalink}" rel="nofollow">Комментировать &#x2192;</a>{/block:Video}
+            {block:Quote}<a href="{Permalink}" rel="nofollow">Комментировать &#x2192;</a>{/block:Quote}
+            {block:Photo}<a href="{Permalink}" rel="nofollow">Комментировать &#x2192;</a>{/block:Photo}
+            {block:Answer}<a href="{Permalink}" rel="nofollow">Комментировать &#x2192;</a>{/block:Answer}
             &nbsp;
           </p>
           {/block:IndexPage}
@@ -193,7 +194,7 @@
 
         {block:Permalink}
         <aside id="comments">
-          <fb:comments href="{Permalink}" num_posts="10" width="600"></fb:comments>
+          <div id="fb_comments" class="fb-comments" data-href="{Permalink}" data-num-posts="10" data-width="600"></div>
           {block:PostNotes}<div class="notes"><h3>Заметки</h3><noindex>{PostNotes}</noindex></div>{/block:PostNotes}
         </aside>
         {/block:Permalink}
@@ -208,15 +209,15 @@
     </div>
 
     <div class="services">
-      <a href="http://twitter.com/moskovka" rel="external author" class="twitter"><img src="http://static.moskovka.su/i/twitter.png" width="32" height="32" alt="Twitter" title="Twitter"></a>
-      <a href="http://gplus.to/moskovka" rel="external author" class="googleplus"><img src="http://static.moskovka.su/i/googleplus.png" width="32" height="32" alt="Google+" title="Google+"></a>
-      <a href="http://vkontakte.ru/moskovka" rel="external author" class="vkontakte"><img src="http://static.moskovka.su/i/vkontakte.png" width="32" height="32" alt="ВКонтакте" title="ВКонтакте"></a>
-      <a href="http://facebook.com/efimova" rel="external author" class="facebook"><img src="http://static.moskovka.su/i/facebook.png" width="32" height="32" alt="Facebook" title="Facebook"></a>
+      <a href="http://twitter.com/moskovka" rel="external author nofollow" class="twitter"><img src="http://static.moskovka.su/i/twitter.png" width="32" height="32" alt="Twitter" title="Twitter"></a>
+      <a href="http://gplus.to/moskovka" rel="external author nofollow" class="googleplus"><img src="http://static.moskovka.su/i/googleplus.png" width="32" height="32" alt="Google+" title="Google+"></a>
+      <a href="http://vk.com/moskovka" rel="external author nofollow" class="vkontakte"><img src="http://static.moskovka.su/i/vkontakte.png" width="32" height="32" alt="ВКонтакте" title="ВКонтакте"></a>
+      <a href="http://facebook.com/efimova" rel="external author nofollow" class="facebook"><img src="http://static.moskovka.su/i/facebook.png" width="32" height="32" alt="Facebook" title="Facebook"></a>
 
-      <a href="http://www.youtube.com/user/amoskovka" rel="external author" class="youtube"><img src="http://static.moskovka.su/i/youtube.png" width="32" height="32" alt="Youtube" title="Youtube"></a>
-      <a href="http://vimeo.com/moskovka" rel="external author" class="vimeo"><img src="http://static.moskovka.su/i/vimeo.png" width="32" height="32" alt="Vimeo" title="Vimeo"></a>
+      <a href="http://www.youtube.com/user/amoskovka" rel="external author nofollow" class="youtube"><img src="http://static.moskovka.su/i/youtube.png" width="32" height="32" alt="Youtube" title="Youtube"></a>
+      <a href="http://vimeo.com/moskovka" rel="external author nofollow" class="vimeo"><img src="http://static.moskovka.su/i/vimeo.png" width="32" height="32" alt="Vimeo" title="Vimeo"></a>
 
-      <a href="http://feeds.feedburner.com/simonenko/alena" class="rssfeed"><img src="http://static.moskovka.su/i/rssfeed.png" width="32" height="32" alt="RSS" title="RSS"></a>
+      <a href="http://feeds.feedburner.com/simonenko/alena" rel="nofollow" class="rssfeed"><img src="http://static.moskovka.su/i/rssfeed.png" width="32" height="32" alt="RSS" title="RSS"></a>
     </div>
 
     <div class="paginator">
@@ -243,30 +244,18 @@
           {block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}
         {/block:HasPages}
         <li><a href="/ask">Задать вопрос</a></li>
-        <li><a href="/archive/">Архив</a></li>
-        <li><a href="http://feeds.feedburner.com/simonenko/alena">RSS</a></li>
+        <li><a href="/archive/" rel="nofollow">Архив</a></li>
+        <li><a href="http://feeds.feedburner.com/simonenko/alena" rel="nofollow">RSS</a></li>
       </ul>
     </nav>
   </div>
 
   <footer>
-    &copy; 2011 Алён@ Алёшкина.
+    &copy; 2012 Алён@ Алёшкина.
   </footer>
 
   <div id="fb-root"></div>
-  <script>
-    window.___gcfg = {lang: 'ru'};
-    (function(w, d) {
-      w._gaq = [['_setAccount','UA-298210-6'], ['_trackPageview'], ['_trackPageLoadTime']];
-      var u = [
-        '//connect.facebook.net/ru_RU/all.js#xfbml=1', // Facebook SDK
-        '//platform.twitter.com/widgets.js',           // Twitter Widgets
-        'https://apis.google.com/js/plusone.js',       // Google +1 Button
-        ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js' // Google Analytics
-      ],
-      i=u.length,n='script',f=d.createDocumentFragment(),e=d.createElement(n),t;while(i--){t=e.cloneNode(false);t.async=t.src=u[i];f.appendChild(t);}(t=d.getElementsByTagName(n)[0]).parentNode.insertBefore(f,t);
-    }(this, document));
-  </script>
+
   {block:PermalinkPage}
   <script>
     if ('{PostID}' === '') {
@@ -278,5 +267,7 @@
     }
   </script>
   {/block:PermalinkPage}
+
+  <!-- Yandex.Metrika counter --><div style="display:none;"><script type="text/javascript">(function(w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter12239248 = new Ya.Metrika({id:12239248, enableAll: true, webvisor:true}); } catch(e) { } }); })(window, "yandex_metrika_callbacks");</script></div><script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script><noscript><div><img src="//mc.yandex.ru/watch/12239248" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
 </body>
 </html>
