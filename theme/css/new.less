@@ -1,11 +1,11 @@
-@import "main/reset.less";
+@import "less-framework/normalize.less";
 @import "less-framework/function.less";
 @import "main/class.less";
 
 body {
-  .background-vertical(rgba(156, 193, 217, 0.5), rgba(101, 157, 191, 0.5), rgb(156, 193, 217));
+  .background-vertical(rgba(101, 157, 191, 0.5), rgba(156, 193, 217, 0.5));
   color: #000;
-  font: normal 1em/1.5em 'Forum', 'Lucida Grande', 'Helvetica Neue', Arial, sans-serif;
+  font: normal 1em/1.5em 'PT Sans', sans-serif;
 }
 
 #wrapper {
@@ -15,7 +15,7 @@ body {
   min-width: 700px;
   margin: 50px auto 0;
   background: rgba(255, 255, 255, 0.8);
-  .box-shadow(8px, #aaaaaa);
+  .box-shadow(1px, 1px, 8px, #aaaaaa);
   .border-radius(10px);
   .line-text-shadow(#ffffff);
 
@@ -25,15 +25,22 @@ body {
     height: 50px;
     padding: 15px 20px 0;
     .border-radius(10px);
-    .top-gradient(rgb(200, 200, 200), rgba(255, 255, 255, 0), transparent);
+    .linear-gradient(top, rgba(200, 200, 200, 0.9), rgba(255, 255, 255, 0));
+    background-color: transparent !important;
     text-align: center;
     line-height: 1.8em;
 
     h1 {
+      margin: 0;
       font-size: 1.5em;
+      font-weight: normal;
     }
     h2 {
+      margin: 0;
       font-size: 1.1em;
+      font-weight: normal;
+      font-style: italic;
+      color: #333;
     }
   }
 
@@ -42,10 +49,18 @@ body {
 
     h1 {
       font-size: 1.5em;
+      font-weight: normal;
+      margin: 0.6em 0 0.4em 0;
     }
     h2 {
       margin: 10px 0 0;
+      font-size: 1.3em;
+      font-weight: normal;
+    }
+    h3 {
+      margin: 10px 0 0;
       font-size: 1.1em;
+      font-weight: normal;
     }
 
     img[align=left] {
@@ -109,7 +124,7 @@ body {
 
       img {
         .border-radius(8px);
-        .box-shadow(8px, #aaaaaa);
+        .box-shadow(1px, 1px, 8px, #aaaaaa);
       }
     }
 
@@ -186,7 +201,7 @@ div.images {
     position: absolute;
     z-index: 2;
     .border-radius(75px);
-    .box-shadow(8px, rgb(120, 120, 120));
+    .box-shadow(1px, 1px, 8px, rgb(120, 120, 120));
     .scale(0.8);
 
     &:hover {
@@ -223,7 +238,7 @@ div.services {
     width: 32px;
     height: 32px;
     margin-left: -20px;
-    .box-shadow(8px, #aaaaaa);
+    .box-shadow(1px, 1px, 8px, #aaaaaa);
     border: none !important;
 
     &:hover {
@@ -286,11 +301,19 @@ nav {
     height: 20px;
     background-color: #dfdfdf;
     border: 1px solid #ccc;
+    padding-left: 5px;
     .border-radius(4px);
+    font-size: 0.7em;
+
+    &:hover {
+      background-color: #fff;
+      color: #000;
+    }
   }
 
   input[type=submit] {
     .awesome-button();
+    font-size: 0.8em;
   }
 }
 
@@ -307,6 +330,12 @@ body > footer {
 }
 
 ::selection {
+  background: rgb(156, 193, 217);
+  color: rgb(0, 0, 0);
+  text-shadow: none;
+}
+
+::-moz-selection {
   background: rgb(156, 193, 217);
   color: rgb(0, 0, 0);
   text-shadow: none;
