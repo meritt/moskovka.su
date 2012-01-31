@@ -604,6 +604,9 @@ body {
 #wrapper > section footer > .fb_iframe_widget {
   margin-right: 15px !important;
 }
+#wrapper > section footer > .gp > div {
+  width: 75px !important;
+}
 #wrapper > section footer#social {
   height: 30px;
 }
