@@ -1,9 +1,9 @@
 @import "less-framework/normalize.less";
-@import "less-framework/function.less";
+@import "less-framework/functions.less";
 @import "main/class.less";
 
 body {
-  .background-vertical(rgba(101, 157, 191, 0.5), rgba(156, 193, 217, 0.5));
+  #mlf > .background-vertical(rgba(101, 157, 191, 0.5), rgba(156, 193, 217, 0.5));
   color: #000;
   font: normal 1em/1.5em 'PT Sans', sans-serif;
 }
@@ -15,17 +15,17 @@ body {
   min-width: 700px;
   margin: 50px auto 0;
   background: rgba(255, 255, 255, 0.8);
-  .box-shadow(1px, 1px, 8px, #aaaaaa);
-  .border-radius(10px);
-  .line-text-shadow(#ffffff);
+  #mlf > .box-shadow(1px 1px 8px #aaaaaa);
+  #mlf > .border-radius(10px);
+  #mlf > .line-text-shadow(#ffffff);
 
   .awesome-link();
 
   >header {
     height: 50px;
     padding: 15px 20px 0;
-    .border-radius(10px);
-    .linear-gradient(top, rgba(200, 200, 200, 0.9), rgba(255, 255, 255, 0));
+    #mlf > .border-radius(10px);
+    #mlf > .linear-gradient(top, rgba(200, 200, 200, 0.9), rgba(255, 255, 255, 0));
     background-color: transparent !important;
     text-align: center;
     line-height: 1.8em;
@@ -35,6 +35,7 @@ body {
       font-size: 1.5em;
       font-weight: normal;
     }
+
     h2 {
       margin: 0;
       font-size: 1.1em;
@@ -123,17 +124,15 @@ body {
       }
 
       img {
-        .border-radius(8px);
-        .box-shadow(1px, 1px, 8px, #aaaaaa);
+        #mlf > .border-radius(8px);
+        #mlf > .box-shadow(1px 1px 8px #aaaaaa);
       }
     }
 
     .no-shadow {
       img {
-        .border-radius(none);
-        -webkit-box-shadow: none;
-           -moz-box-shadow: none;
-                box-shadow: none;
+        #mlf > .border-radius(none);
+        #mlf > .box-shadow(none);
       }
     }
 
@@ -144,9 +143,11 @@ body {
         clear: none !important;
         float: right !important;
       }
+
       >.fb_iframe_widget {
         margin-right: 15px !important;
       }
+
       >.gp > div {
         width: 75px !important;
       }
@@ -158,6 +159,7 @@ body {
           clear: none !important;
           float: left !important;
         }
+
         >.fb_iframe_widget {
           margin-right: 15px !important;
         }
@@ -172,7 +174,7 @@ body {
         padding: 2px 10px;
         background-color: rgb(3, 102, 164);
         border: none;
-        .border-radius(8px);
+        #mlf > .border-radius(8px);
         color: #fff;
         text-shadow: none;
       }
@@ -203,13 +205,13 @@ div.images {
   .moskovka1, .moskovka3, .moskovka4 {
     position: absolute;
     z-index: 2;
-    .border-radius(75px);
-    .box-shadow(1px, 1px, 8px, rgb(120, 120, 120));
-    .scale(0.8);
+    #mlf > .border-radius(75px);
+    #mlf > .box-shadow(1px 1px 8px rgb(120, 120, 120));
+    #mlf > .scale(0.8);
 
     &:hover {
       z-index: 10;
-      .scale(1);
+      #mlf > .scale(1);
     }
   }
 
@@ -234,18 +236,22 @@ div.services {
   z-index: 1;
   margin: 0 auto;
 
-  a, a:link, a:visited {
+  a {
     position: absolute;
     z-index: 2;
     display: block;
     width: 32px;
     height: 32px;
     margin-left: -20px;
-    .box-shadow(1px, 1px, 8px, #aaaaaa);
     border: none !important;
+    #mlf > .box-shadow(1px 1px 8px #aaaaaa);
+    #mlf > .rotate(45deg);
+    -webkit-transition: -webkit-transform 0.4s ease-out !important;
+    -moz-transition: -moz-transform 0.4s ease-out !important;
+    transition: transform 0.4s ease-out !important;
 
     &:hover {
-      .rotate();
+      #mlf > .rotate(360deg);
     }
   }
 
@@ -253,22 +259,22 @@ div.services {
     margin-top: 10px;
   }
   .googleplus {
-    margin-top: 50px;
+    margin-top: 60px;
   }
   .vkontakte {
-    margin-top: 90px;
+    margin-top: 110px;
   }
   .facebook {
-    margin-top: 130px;
+    margin-top: 160px;
   }
   .youtube {
-    margin-top: 170px;
-  }
-  .vimeo {
     margin-top: 210px;
   }
+  .vimeo {
+    margin-top: 260px;
+  }
   .rssfeed {
-    margin-top: 250px;
+    margin-top: 310px;
   }
 }
 
@@ -305,7 +311,7 @@ nav {
     background-color: #dfdfdf;
     border: 1px solid #ccc;
     padding-left: 5px;
-    .border-radius(4px);
+    #mlf > .border-radius(4px);
     font-size: 0.7em;
 
     &:hover {

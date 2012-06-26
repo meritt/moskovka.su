@@ -1,4 +1,4 @@
-/*! normalize.css 2011-11-04T15:38 UTC - http://github.com/necolas/normalize.css */
+/*! normalize.css 2012-03-11T12:53 UTC - http://github.com/necolas/normalize.css */
 /* =============================================================================
    HTML5 display definitions
    ========================================================================== */
@@ -14,22 +14,27 @@ footer,
 header,
 hgroup,
 nav,
-section {
+section,
+summary {
   display: block;
 }
 /*
  * Corrects inline-block display not defined in IE6/7/8/9 & FF3
  */
-audio, canvas, video {
+audio,
+canvas,
+video {
   display: inline-block;
   *display: inline;
   *zoom: 1;
 }
 /*
  * Prevents modern browsers from displaying 'audio' without controls
+ * Remove excess height in iOS5 devices
  */
 audio:not([controls]) {
   display: none;
+  height: 0;
 }
 /*
  * Addresses styling for 'hidden' attribute not present in IE7/8/9, FF3, S4
@@ -43,40 +48,36 @@ audio:not([controls]) {
    ========================================================================== */
 /*
  * 1. Corrects text resizing oddly in IE6/7 when body font-size is set using em units
- *    http://clagnut.com/blog/348/#c790
- * 2. Keeps page centred in all browsers regardless of content height
- * 3. Prevents iOS text size adjust after orientation change, without disabling user zoom
- *    www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
+ *  http://clagnut.com/blog/348/#c790
+ * 2. Prevents iOS text size adjust after orientation change, without disabling user zoom
+ *  www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
  */
 html {
   font-size: 100%;
   /* 1 */
 
-  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
   /* 2 */
 
-  -webkit-text-size-adjust: 100%;
-  /* 3 */
-
   -ms-text-size-adjust: 100%;
-  /* 3 */
+  /* 2 */
 
+}
+/*
+ * Addresses font-family inconsistency between 'textarea' and other form elements.
+ */
+html,
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif;
 }
 /*
  * Addresses margins handled incorrectly in IE6/7
  */
 body {
   margin: 0;
-}
-/* 
- * Addresses font-family inconsistency between 'textarea' and other form elements.
- */
-body,
-button,
-input,
-select,
-textarea {
-  font-family: sans-serif;
 }
 /* =============================================================================
    Links
@@ -91,17 +92,40 @@ a:focus {
  * Improves readability when focused and also mouse hovered in all browsers
  * people.opera.com/patrickl/experiments/keyboard/test
  */
-a:hover, a:active {
+a:hover,
+a:active {
   outline: 0;
 }
 /* =============================================================================
    Typography
    ========================================================================== */
 /*
- * Neutralise smaller font-size in 'section' and 'article' in FF4+, Chrome, S5
+ * Addresses font sizes and margins set differently in IE6/7
+ * Addresses font sizes within 'section' and 'article' in FF4+, Chrome, S5
  */
 h1 {
   font-size: 2em;
+  margin: 0.67em 0;
+}
+h2 {
+  font-size: 1.5em;
+  margin: 0.83em 0;
+}
+h3 {
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+h4 {
+  font-size: 1em;
+  margin: 1.33em 0;
+}
+h5 {
+  font-size: 0.83em;
+  margin: 1.67em 0;
+}
+h6 {
+  font-size: 0.75em;
+  margin: 2.33em 0;
 }
 /*
  * Addresses styling not present in IE7/8/9, S5, Chrome
@@ -112,7 +136,8 @@ abbr[title] {
 /*
  * Addresses style set to 'bolder' in FF3+, S4/5, Chrome
 */
-b, strong {
+b,
+strong {
   font-weight: bold;
 }
 blockquote {
@@ -130,6 +155,13 @@ dfn {
 mark {
   background: #ff0;
   color: #000;
+}
+/*
+ * Addresses margins set differently in IE6/7
+ */
+p,
+pre {
+  margin: 1em 0;
 }
 /*
  * Corrects font family set oddly in IE6, S4/5, Chrome
@@ -160,7 +192,8 @@ q {
   quotes: none;
 }
 /* 2 */
-q:before, q:after {
+q:before,
+q:after {
   content: '';
   content: none;
 }
@@ -171,7 +204,8 @@ small {
  * Prevents sub and sup affecting line-height in all browsers
  * gist.github.com/413930
  */
-sub, sup {
+sub,
+sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
@@ -186,14 +220,31 @@ sub {
 /* =============================================================================
    Lists
    ========================================================================== */
-ul, ol {
-  margin-left: 0;
-  padding: 0 0 0 40px;
+/*
+ * Addresses margins set differently in IE6/7
+ */
+dl,
+menu,
+ol,
+ul {
+  margin: 1em 0;
 }
 dd {
   margin: 0 0 0 40px;
 }
-nav ul, nav ol {
+/*
+ * Addresses paddings set differently in IE6/7
+ */
+menu,
+ol,
+ul {
+  padding: 0 0 0 40px;
+}
+/*
+ * Corrects list images handled incorrectly in IE7
+ */
+nav ul,
+nav ol {
   list-style: none;
   list-style-image: none;
 }
@@ -203,7 +254,7 @@ nav ul, nav ol {
 /*
  * 1. Removes border when inside 'a' element in IE6/7/8/9, FF3
  * 2. Improves image quality when scaled in IE7
- *    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
+ *  code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
  */
 img {
   border: 0;
@@ -214,7 +265,7 @@ img {
 
 }
 /*
- * Corrects overflow displayed oddly in IE9 
+ * Corrects overflow displayed oddly in IE9
  */
 svg:not(:root) {
   overflow: hidden;
@@ -247,14 +298,19 @@ fieldset {
 }
 /*
  * 1. Corrects color not being inherited in IE6/7/8/9
- * 2. Corrects alignment displayed oddly in IE6/7
+ * 2. Corrects text not wrapping in FF3
+ * 3. Corrects alignment displayed oddly in IE6/7
  */
 legend {
   border: 0;
   /* 1 */
 
-  *margin-left: -7px;
+  padding: 0;
+  white-space: normal;
   /* 2 */
+
+  *margin-left: -7px;
+  /* 3 */
 
 }
 /*
@@ -282,7 +338,8 @@ textarea {
 /*
  * Addresses FF3/4 setting line-height on 'input' using !important in the UA stylesheet
  */
-button, input {
+button,
+input {
   line-height: normal;
   /* 1 */
 
@@ -291,7 +348,7 @@ button, input {
  * 1. Improves usability and consistency of cursor style between image-type 'input' and others
  * 2. Corrects inability to style clickable 'input' types in iOS
  * 3. Removes inner spacing in IE7 without affecting normal text inputs
- *    Known issue: inner spacing remains in IE6
+ *  Known issue: inner spacing remains in IE6
  */
 button,
 input[type="button"],
@@ -308,15 +365,31 @@ input[type="submit"] {
 
 }
 /*
+ * Re-set default cursor for disabled elements
+ */
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+/*
  * 1. Addresses box sizing set to content-box in IE8/9
  * 2. Removes excess padding in IE8/9
+ * 3. Removes excess padding in IE7
+    Known issue: excess padding remains in IE6
  */
-input[type="checkbox"], input[type="radio"] {
+input[type="checkbox"],
+input[type="radio"] {
   box-sizing: border-box;
   /* 1 */
 
   padding: 0;
   /* 2 */
+
+  *height: 13px;
+  /* 3 */
+
+  *width: 13px;
+  /* 3 */
 
 }
 /*
@@ -334,16 +407,18 @@ input[type="search"] {
   box-sizing: content-box;
 }
 /*
- * Removes inner padding that is displayed in S5, Chrome on OS X
+ * Removes inner padding and search cancel button in S5, Chrome on OS X
  */
-input[type="search"]::-webkit-search-decoration {
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
 }
 /*
  * Removes inner padding and border in FF3+
  * www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
  */
-button::-moz-focus-inner, input::-moz-focus-inner {
+button::-moz-focus-inner,
+input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
@@ -362,77 +437,13 @@ textarea {
 /* =============================================================================
    Tables
    ========================================================================== */
-/* 
+/*
  * Remove most spacing between table cells
  */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-/**
- * Opacity
- */
-/**
- * Text wrap
- */
-/**
- * Behavior when user select
- */
-/**
- * Background Size
- */
-/**
- * Linear gradients
- */
-/**
- * Radial gradients
- */
-/**
- * Background patterns
- * Source: http://leaverou.me/2010/12/checkered-stripes-other-background-patterns-with-css3-gradients/
- */
-/**
- * Background clip
- */
-/**
- * Border radius
- */
-/**
- * Left border radius
- */
-/**
- * Right border radius
- */
-/**
- * Box shadow
- */
-/**
- * Double inset box shadow
- */
-/**
- * Blur text shadows
- */
-/**
- * Line text shadows
- */
-/**
- * Animation attributes
- */
-/**
- * Rotate transforms
- */
-/**
- * Scale transforms
- */
-/**
- * Animations
- */
-/**
- * Columns
- */
-/**
- * Scrollbars like twitter, only for webkit
- */
 .hidden {
   display: none;
 }
@@ -440,11 +451,9 @@ body {
   background-color: rgba(101, 157, 191, 0.5);
   background-image: -webkit-linear-gradient(0, transparent 50%, rgba(156, 193, 217, 0.5) 50%);
   background-image: -moz-linear-gradient(0, transparent 50%, rgba(156, 193, 217, 0.5) 50%);
-  background-image: -ms-linear-gradient(0, transparent 50%, rgba(156, 193, 217, 0.5) 50%);
   background-image: -o-linear-gradient(0, transparent 50%, rgba(156, 193, 217, 0.5) 50%);
   background-image: linear-gradient(0, transparent 50%, rgba(156, 193, 217, 0.5) 50%);
   -webkit-background-size: 50px 50px;
-  -moz-background-size: 50px 50px;
   -o-background-size: 50px 50px;
   background-size: 50px 50px;
   color: #000;
@@ -458,10 +467,8 @@ body {
   margin: 50px auto 0;
   background: rgba(255, 255, 255, 0.8);
   -webkit-box-shadow: 1px 1px 8px #aaaaaa;
-  -moz-box-shadow: 1px 1px 8px #aaaaaa;
   box-shadow: 1px 1px 8px #aaaaaa;
   -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
   border-radius: 10px;
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
@@ -472,11 +479,10 @@ body {
   color: #000;
   text-decoration: none;
   border-bottom: 2px solid #9cc1d9;
-  -webkit-transition: border 500ms ease-out 0s;
-  -moz-transition: border 500ms ease-out 0s;
-  -ms-transition: border 500ms ease-out 0s;
-  -o-transition: border 500ms ease-out 0s;
-  transition: border 500ms ease-out 0s;
+  -webkit-transition: border 500ms;
+  -moz-transition: border 500ms;
+  -o-transition: border 500ms;
+  transition: border 500ms;
 }
 #wrapper a:hover {
   border-bottom-color: #000;
@@ -485,15 +491,14 @@ body {
   height: 50px;
   padding: 15px 20px 0;
   -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
   border-radius: 10px;
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
-  background-color: rgba(200, 200, 200, 0.9);
+  background-color: rgba(255, 255, 255, 0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c7c7c7', endColorstr='#ffffff', GradientType=0);
   background-image: -webkit-linear-gradient(top, rgba(200, 200, 200, 0.9), rgba(255, 255, 255, 0));
   background-image: -moz-linear-gradient(top, rgba(200, 200, 200, 0.9), rgba(255, 255, 255, 0));
-  background-image: -ms-linear-gradient(top, rgba(200, 200, 200, 0.9), rgba(255, 255, 255, 0));
   background-image: -o-linear-gradient(top, rgba(200, 200, 200, 0.9), rgba(255, 255, 255, 0));
   background-image: linear-gradient(to bottom, rgba(200, 200, 200, 0.9), rgba(255, 255, 255, 0));
   background-color: transparent !important;
@@ -569,35 +574,35 @@ body {
 #wrapper > section section.quote .long_quote {
   font-size: 1.4em;
 }
-#wrapper > section .image a, #wrapper > section .image a:link, #wrapper > section .image a:visited {
+#wrapper > section .image a,
+#wrapper > section .image a:link,
+#wrapper > section .image a:visited {
   border: none;
 }
 #wrapper > section .image img {
   -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
   border-radius: 8px;
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
   -webkit-box-shadow: 1px 1px 8px #aaaaaa;
-  -moz-box-shadow: 1px 1px 8px #aaaaaa;
   box-shadow: 1px 1px 8px #aaaaaa;
 }
 #wrapper > section .no-shadow img {
   -webkit-border-radius: none;
-  -moz-border-radius: none;
   border-radius: none;
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
   -webkit-box-shadow: none;
-  -moz-box-shadow: none;
   box-shadow: none;
 }
 #wrapper > section footer {
   padding-top: 10px;
 }
-#wrapper > section footer > iframe, #wrapper > section footer > div, #wrapper > section footer > .fb_iframe_widget {
+#wrapper > section footer > iframe,
+#wrapper > section footer > div,
+#wrapper > section footer > .fb_iframe_widget {
   clear: none !important;
   float: right !important;
 }
@@ -610,7 +615,9 @@ body {
 #wrapper > section footer#social {
   height: 30px;
 }
-#wrapper > section footer#social > iframe, #wrapper > section footer#social > div, #wrapper > section footer#social > .fb_iframe_widget {
+#wrapper > section footer#social > iframe,
+#wrapper > section footer#social > div,
+#wrapper > section footer#social > .fb_iframe_widget {
   clear: none !important;
   float: left !important;
 }
@@ -620,13 +627,14 @@ body {
 #wrapper > section p.read_more_container {
   margin: 0;
 }
-#wrapper > section p.read_more_container a, #wrapper > section p.read_more_container a:link, #wrapper > section p.read_more_container a:visited {
+#wrapper > section p.read_more_container a,
+#wrapper > section p.read_more_container a:link,
+#wrapper > section p.read_more_container a:visited {
   display: inline-block;
   padding: 2px 10px;
   background-color: #0366a4;
   border: none;
   -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
   border-radius: 8px;
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
@@ -642,7 +650,9 @@ body {
 #wrapper > section aside .notes {
   padding-top: 15px;
 }
-#wrapper > section aside .notes a, #wrapper > section aside .notes a:link, #wrapper > section aside .notes a:visited {
+#wrapper > section aside .notes a,
+#wrapper > section aside .notes a:link,
+#wrapper > section aside .notes a:visited {
   border: none;
 }
 div.images {
@@ -651,17 +661,17 @@ div.images {
   z-index: 1;
   margin: 0 auto;
 }
-div.images .moskovka1, div.images .moskovka3, div.images .moskovka4 {
+div.images .moskovka1,
+div.images .moskovka3,
+div.images .moskovka4 {
   position: absolute;
   z-index: 2;
   -webkit-border-radius: 75px;
-  -moz-border-radius: 75px;
   border-radius: 75px;
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
   -webkit-box-shadow: 1px 1px 8px #787878;
-  -moz-box-shadow: 1px 1px 8px #787878;
   box-shadow: 1px 1px 8px #787878;
   -webkit-transform: scale(0.8);
   -moz-transform: scale(0.8);
@@ -670,7 +680,9 @@ div.images .moskovka1, div.images .moskovka3, div.images .moskovka4 {
   transform: scale(0.8);
   zoom: 1;
 }
-div.images .moskovka1:hover, div.images .moskovka3:hover, div.images .moskovka4:hover {
+div.images .moskovka1:hover,
+div.images .moskovka3:hover,
+div.images .moskovka4:hover {
   z-index: 10;
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
@@ -698,46 +710,54 @@ div.services {
   z-index: 1;
   margin: 0 auto;
 }
-div.services a, div.services a:link, div.services a:visited {
+div.services a {
   position: absolute;
   z-index: 2;
   display: block;
   width: 32px;
   height: 32px;
   margin-left: -20px;
-  -webkit-box-shadow: 1px 1px 8px #aaaaaa;
-  -moz-box-shadow: 1px 1px 8px #aaaaaa;
-  box-shadow: 1px 1px 8px #aaaaaa;
   border: none !important;
-}
-div.services a:hover, div.services a:link:hover, div.services a:visited:hover {
+  -webkit-box-shadow: 1px 1px 8px #aaaaaa;
+  box-shadow: 1px 1px 8px #aaaaaa;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
   zoom: 1;
+  -webkit-transition: -webkit-transform 0.4s ease-out !important;
+  -moz-transition: -moz-transform 0.4s ease-out !important;
+  transition: transform 0.4s ease-out !important;
+}
+div.services a:hover {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+  zoom: 1;
 }
 div.services .twitter {
   margin-top: 10px;
 }
 div.services .googleplus {
-  margin-top: 50px;
+  margin-top: 60px;
 }
 div.services .vkontakte {
-  margin-top: 90px;
+  margin-top: 110px;
 }
 div.services .facebook {
-  margin-top: 130px;
+  margin-top: 160px;
 }
 div.services .youtube {
-  margin-top: 170px;
-}
-div.services .vimeo {
   margin-top: 210px;
 }
+div.services .vimeo {
+  margin-top: 260px;
+}
 div.services .rssfeed {
-  margin-top: 250px;
+  margin-top: 310px;
 }
 div.paginator {
   padding: 0 0 15px;
@@ -768,7 +788,6 @@ nav input[type=search] {
   border: 1px solid #ccc;
   padding-left: 5px;
   -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
   border-radius: 4px;
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
@@ -782,18 +801,16 @@ nav input[type=search]:hover {
 nav input[type=submit] {
   border: 1px solid #666666;
   -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
   border-radius: 4px;
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
   -webkit-box-shadow: 1px 1px 2px #cccccc;
-  -moz-box-shadow: 1px 1px 2px #cccccc;
   box-shadow: 1px 1px 2px #cccccc;
-  background-color: #333333;
+  background-color: #999999;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333', endColorstr='#999999', GradientType=0);
   background-image: -webkit-linear-gradient(top, #333333, #999999);
   background-image: -moz-linear-gradient(top, #333333, #999999);
-  background-image: -ms-linear-gradient(top, #333333, #999999);
   background-image: -o-linear-gradient(top, #333333, #999999);
   background-image: linear-gradient(to bottom, #333333, #999999);
   padding: 4px 8px;
@@ -802,21 +819,20 @@ nav input[type=submit] {
 }
 nav input[type=submit]:hover {
   -webkit-box-shadow: 1px 1px 2px #999999;
-  -moz-box-shadow: 1px 1px 2px #999999;
   box-shadow: 1px 1px 2px #999999;
-  background-color: #444444;
+  background-color: #aaaaaa;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#454545', endColorstr='#ababab', GradientType=0);
   background-image: -webkit-linear-gradient(top, #444444, #aaaaaa);
   background-image: -moz-linear-gradient(top, #444444, #aaaaaa);
-  background-image: -ms-linear-gradient(top, #444444, #aaaaaa);
   background-image: -o-linear-gradient(top, #444444, #aaaaaa);
   background-image: linear-gradient(to bottom, #444444, #aaaaaa);
   text-shadow: #333333 0px 1px 0px;
 }
 nav input[type=submit]:active {
-  background-color: #111111;
+  background-color: #666666;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#121212', endColorstr='#666666', GradientType=0);
   background-image: -webkit-linear-gradient(top, #111111, #666666);
   background-image: -moz-linear-gradient(top, #111111, #666666);
-  background-image: -ms-linear-gradient(top, #111111, #666666);
   background-image: -o-linear-gradient(top, #111111, #666666);
   background-image: linear-gradient(to bottom, #111111, #666666);
 }
@@ -829,11 +845,10 @@ body > footer a {
   color: #000;
   text-decoration: none;
   border-bottom: 2px solid #9cc1d9;
-  -webkit-transition: border 500ms ease-out 0s;
-  -moz-transition: border 500ms ease-out 0s;
-  -ms-transition: border 500ms ease-out 0s;
-  -o-transition: border 500ms ease-out 0s;
-  transition: border 500ms ease-out 0s;
+  -webkit-transition: border 500ms;
+  -moz-transition: border 500ms;
+  -o-transition: border 500ms;
+  transition: border 500ms;
 }
 body > footer a:hover {
   border-bottom-color: #000;
