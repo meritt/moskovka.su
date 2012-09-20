@@ -137,32 +137,24 @@ body {
     }
 
     footer {
-      padding-top: 10px;
+      margin-top: 10px;
 
-      >iframe, >div, >.fb_iframe_widget {
-        clear: none !important;
-        float: right !important;
-      }
-
-      >.fb_iframe_widget {
-        margin-right: 15px !important;
-      }
-
-      >.gp > div {
-        width: 75px !important;
-      }
-
-      &#social {
+      .buttons {
+        float: right;
         height: 30px;
+      }
 
-        >iframe, >div, >.fb_iframe_widget {
-          clear: none !important;
-          float: left !important;
-        }
+      &#social .buttons {
+        float: none;
+      }
 
-        >.fb_iframe_widget {
-          margin-right: 15px !important;
-        }
+      .fb-like {
+        vertical-align: top;
+      }
+
+      .vk-like {
+        display: inline-block;
+        margin-right: 6px;
       }
     }
 
@@ -255,16 +247,16 @@ div.services {
     }
   }
 
-  .twitter {
+  .facebook {
     margin-top: 10px;
   }
-  .googleplus {
+  .twitter {
     margin-top: 60px;
   }
   .vkontakte {
     margin-top: 110px;
   }
-  .facebook {
+  .googleplus {
     margin-top: 160px;
   }
   .youtube {
@@ -348,4 +340,8 @@ body > footer {
   background: rgb(156, 193, 217);
   color: rgb(0, 0, 0);
   text-shadow: none;
+}
+
+iframe.twitter-share-button {
+  width: 129px !important;
 }
